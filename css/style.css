@@ -1,0 +1,38 @@
+/* css/style.css */
+
+/* 基本的なリセットやグローバルスタイル (必要に応じて) */
+body {
+  font-family: "Public Sans", "Noto Sans", sans-serif; /* tailwind.configで設定したフォントを確実に適用 */
+  color: #0e141b; /* デフォルトの文字色 */
+  background-color: #f8fafc; /* デフォルトの背景色 (slate-50) */
+}
+
+/* ナビゲーションのアクティブ状態のスタイル */
+/* HTML側でTailwindクラスが直接指定されているため、JSでクラスを付け替える場合は、
+   既存の text-[#4e7397] や text-[#0e141b] を操作します。
+   もし追加のスタイルが必要な場合はここに記述します。
+   例：
+.footer-nav-item.active p,
+.footer-nav-item.active div {
+  color: #0e141b;
+  font-weight: bold;  /* 例: 太字にするなど */
+/* }
+*/
+
+/* お問い合わせフォームのエラーメッセージスタイル */
+.error-message {
+  color: #ef4444; /* red-500 */
+  font-size: 0.875rem; /* text-sm */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+/* スクロールバーを非表示にするユーティリティ (HTMLでTailwindクラスとして適用済み) */
+/*
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*/
