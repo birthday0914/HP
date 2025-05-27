@@ -1,30 +1,52 @@
-html>
+<!DOCTYPE html>
+<html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>Stitch Design - Products</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Public Sans"', '"Noto Sans"', 'sans-serif'],
+            },
+            colors: {
+              'brand-dark': '#0e141b',
+              'brand-medium': '#4e7397',
+              'brand-light-gray': '#d0dbe7',
+              'brand-bg-gray': '#e7edf3',
+              'brand-primary': '#1465b7',
+              'brand-bg-main': '#f8fafc', // bg-slate-50
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div
       class="relative flex size-full min-h-screen flex-col bg-slate-50 justify-between group/design-root overflow-x-hidden"
-      style='font-family: "Public Sans", "Noto Sans", sans-serif;'
     >
       <div>
         <div class="flex items-center bg-slate-50 p-4 pb-2 justify-between">
-          <div class="text-[#0e141b] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+          <a href="index.html" class="text-[#0e141b] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
               <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
             </svg>
-          </div>
+          </a>
           <h2 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Products</h2>
         </div>
         <div class="@container">
@@ -98,7 +120,7 @@ html>
       </div>
       <div>
         <div class="flex gap-2 border-t border-[#e7edf3] bg-slate-50 px-4 pb-3 pt-2">
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="#">
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="index.html">
             <div class="text-[#4e7397] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
               <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                 <path
@@ -108,7 +130,7 @@ html>
             </div>
             <p class="text-[#4e7397] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
           </a>
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#0e141b]" href="#">
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#0e141b]" href="products.html">
             <div class="text-[#0e141b] flex h-8 items-center justify-center" data-icon="SquaresFour" data-size="24px" data-weight="fill">
               <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                 <path
@@ -118,7 +140,7 @@ html>
             </div>
             <p class="text-[#0e141b] text-xs font-medium leading-normal tracking-[0.015em]">Products</p>
           </a>
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="#">
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="process.html"> <!-- Updated to Sustainability or Process, this example uses Sustainability icon, but process.html will have Factory icon -->
             <div class="text-[#4e7397] flex h-8 items-center justify-center" data-icon="Leaf" data-size="24px" data-weight="regular">
               <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                 <path
@@ -126,9 +148,9 @@ html>
                 ></path>
               </svg>
             </div>
-            <p class="text-[#4e7397] text-xs font-medium leading-normal tracking-[0.015em]">Sustainability</p>
+            <p class="text-[#4e7397] text-xs font-medium leading-normal tracking-[0.015em]">Process</p> <!-- Changed from Sustainability -->
           </a>
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="#">
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="contact.html">
             <div class="text-[#4e7397] flex h-8 items-center justify-center" data-icon="Phone" data-size="24px" data-weight="regular">
               <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                 <path
@@ -142,5 +164,6 @@ html>
         <div class="h-5 bg-slate-50"></div>
       </div>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
