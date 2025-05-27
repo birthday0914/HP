@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design - Investor Relations</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Public Sans"', '"Noto Sans"', 'sans-serif'],
+            },
+            colors: {
+              'brand-dark': '#0e141b',
+              'brand-medium': '#4e7397',
+              'brand-light-gray': '#d0dbe7',
+              'brand-bg-gray': '#e7edf3',
+              'brand-primary': '#1465b7',
+              'brand-bg-main': '#f8fafc',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-slate-50 justify-between group/design-root overflow-x-hidden"
+    >
+      <div>
+        <!-- Optional: Add a back button or header if needed, similar to other pages -->
+        <!-- <div class="flex items-center bg-slate-50 p-4 pb-2 justify-start">
+          <a href="index.html" class="text-[#0e141b] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </a>
+           <h2 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Investor Relations</h2>
+        </div> -->
+
+        <div class="@container">
+          <div class="@[480px]:p-4">
+            <div
+              class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10"
+              style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxQmsJmcDgRdFQTjsJ2wr_xFJD0h9JgNlEMDOAgnkA2yQLRkFgMxlXUGvyPSSQnI5FxipBTXi0OkWCMIq8CiuULUsCqTDqr7kU00rBVn4mG9TBOGSTgdwIsrNn2Ai5o86QFMPkzGA6a2hnZ6itcvonYKWZ7OOPw1p2myr6HUZyoYt_EULNQpS6Tde8ryIWrWcvJ2_3P3VWrypdV6DTrxahucAB0zVacsgUo4uojPlm_09e81YfUojiZJH9xtvVdeg8Y4CaCQwGekQu");'
+            >
+              <div class="flex flex-col gap-2 text-left">
+                <h1
+                  class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                >
+                  Investor Relations
+                </h1>
+                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                  Explore our financial performance, corporate governance, and strategic direction.
+                </h2>
+              </div>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1465b7] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+              >
+                <span class="truncate">View Financial Reports</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#0e141b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Financial Performance</h2>
+        <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Access our latest financial reports, including annual reports, quarterly earnings, and key financial metrics. Stay informed about our financial health and performance
+          trends.
+        </p>
+        <h2 class="text-[#0e141b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Stock Information</h2>
+        <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Track our stock performance, view historical data, and understand our market capitalization. Get real-time updates on our stock price and trading volume.
+        </p>
+        <h2 class="text-[#0e141b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Corporate Governance</h2>
+        <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Learn about our corporate governance structure, board of directors, and commitment to ethical business practices. Review our policies and procedures that ensure
+          transparency and accountability.
+        </p>
+        <h2 class="text-[#0e141b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Market Position & Strategy</h2>
+        <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Understand our market position, competitive landscape, and growth strategy. Discover how we are innovating and expanding our reach in the stainless steel industry.
+        </p>
+        <h2 class="text-[#0e141b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Investor Resources</h2>
+        <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Find additional resources for investors, including FAQs, contact information for investor relations, and upcoming events. Stay connected with our investor community.
+        </p>
+      </div>
+      <div>
+        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container border-t border-[#e7edf3] bg-slate-50">
+          <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+            <a class="text-[#4e7397] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+            <a class="text-[#4e7397] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#">
+              <div class="text-[#4e7397]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#">
+              <div class="text-[#4e7397]" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <p class="text-[#4e7397] text-base font-normal leading-normal">@2024 SteelCo. All rights reserved.</p>
+        </footer>
+        <div class="h-5 bg-slate-50"></div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
