@@ -73,7 +73,56 @@
     <div class="cursor-follower"></div>
 
     <!-- ここから各ページの<main>コンテンツ -->
-    <!-- <main> ... </main> -->
+<main>
+    <section class="hero-section">
+        <div class="hero-video-container">
+            <video autoplay loop muted playsinline class="hero-video" poster="img/hero-background-fallback.jpg">
+                <source src="videos/hero-video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>精密圧延の<br><span class="highlight-text">未来</span>を創造する。</h1>
+                <p>XYZ精密圧延は、最先端技術と熟練の技で、不可能を可能にするステンレス鋼ソリューションを提供します。</p>
+                <a href="products.html" class="btn btn-primary">当社の製品を見る <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-outline">お問い合わせ</a>
+            </div>
+        </div>
+        {/* <div class="scroll-down-indicator"><a href="#first-section"><span></span><span></span><span></span>Scroll</a></div> */}
+    </section>
+
+    <section class="parallax-section intro-section" id="first-section">
+        <div class="parallax-bg-image" style="background-image: url('img/parallax-image-01.jpg');"></div>
+        <div class="container parallax-content text-center">
+            <h2 class="section-title">テクノロジーと情熱の融合</h2>
+            <p class="lead-text">私たちは、μm単位の精度を追求し、お客様の期待を超える品質をお届けします。長年培ってきた経験と、革新への飽くなき探求心が、私たちの強みです。</p>
+            <a href="about.html" class="btn btn-secondary">企業情報へ</a>
+        </div>
+    </section>
+
+    <section class="featured-products-section page-section">
+        <div class="container text-center">
+            <h2 class="section-title">注目の製品</h2>
+            <p class="lead-text">当社の代表的な製品ラインナップの一部をご紹介します。</p>
+            {/* ここに数点の製品カードを配置 (スライダーではなく静的なもの) */}
+            <div class="product-grid-static">
+                {/* .hover-effect-card を使用した製品カード例 */}
+            </div>
+            <a href="products.html" class="btn btn-primary-outline" style="margin-top: 40px;">全ての製品を見る</a>
+        </div>
+    </section>
+    
+    <section class="parallax-section cta-section">
+        <div class="parallax-bg-image" style="background-image: url('img/parallax-image-02.jpg'); background-position: bottom center;"></div>
+         <div class="hero-overlay" style="background-color: rgba(0,82,212,0.7);"></div> {/* 青系のオーバーレイ */}
+        <div class="container parallax-content text-center">
+            <h2 class="section-title" style="color: var(--white);">お客様のビジョンを形に</h2>
+            <p class="lead-text" style="color: var(--off-white); opacity: 0.9;">特殊な仕様、小ロット、短納期など、あらゆるご要望にお応えします。<br>まずはお気軽にご相談ください。</p>
+            <a href="contact.html" class="btn btn-secondary">今すぐ相談する <i class="fas fa-comments"></i></a>
+        </div>
+    </section>
+</main>
     <!-- ここまで各ページの<main>コンテンツ -->
 
     <footer class="site-footer">
