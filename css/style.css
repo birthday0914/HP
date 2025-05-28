@@ -1,7 +1,6 @@
 /* === 基本リセットと変数定義 === */
 :root {
-    --primary-color: angled-gradient {
-  background: linear-gradient(70deg, #2360D8, #36BBC5); /* ブルーからエメラルドグリーンへのグラデーション */
+    --primary-color:#2360D8; /* ブルー */
     --secondary-color: #F27405; /* 鮮やかだが少し落ち着いたオレンジ */
     --accent-color: #5DA9E9; /* 明るいブルー、テクノロジー感とモダンさ */
     
