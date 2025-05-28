@@ -73,7 +73,67 @@
     <div class="cursor-follower"></div>
 
     <!-- ここから各ページの<main>コンテンツ -->
-    <!-- <main> ... </main> -->
+<main>
+    <section class="page-title-section text-center">
+        <div class="container">
+            <h1>製品ラインナップ</h1>
+            <p class="lead-text">最先端の技術で圧延された、高品質ステンレス鋼製品</p>
+        </div>
+    </section>
+
+    <section class="product-slider-section page-section">
+        <div class="container">
+            <h2 class="section-title text-center">製品カテゴリ</h2>
+            <div class="swiper-container product-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card-slide">
+                            <img src="img/product-image-01.jpg" alt="超薄ステンレス箔">
+                            <div class="product-info">
+                                <h3>超薄ステンレス箔</h3>
+                                <p>0.005mmからの超精密圧延。電子部品、医療分野に最適。</p>
+                                <a href="#" class="btn btn-sm btn-primary-outline product-detail-trigger" data-product-id="p001">詳細を見る</a>
+                            </div>
+                        </div>
+                    </div>
+                    {/* ... 他5つのスライド ... */}
+                    <div class="swiper-slide">
+                        <div class="product-card-slide">
+                            <img src="img/product-image-02.jpg" alt="高強度ステンレス鋼板">
+                            <div class="product-info">
+                                <h3>高強度ステンレス鋼板</h3>
+                                <p>優れた機械特性と耐食性。航空宇宙、自動車産業へ。</p>
+                                <a href="#" class="btn btn-sm btn-primary-outline product-detail-trigger" data-product-id="p002">詳細を見る</a>
+                            </div>
+                        </div>
+                    </div>
+                    {/* ... (合計6つになるように) ... */}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    {/* 製品詳細モーダル (GSAPでアニメーション) */}
+    <div class="product-modal" id="product-detail-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                {/* JSでコンテンツをロード */}
+            </div>
+        </div>
+    </div>
+
+    <section class="custom-solutions-section page-section bg-light-section">
+        <div class="container text-center">
+            <h2 class="section-title">カスタムソリューション</h2>
+            <p class="lead-text">お客様の特定のニーズに合わせた、オーダーメイドのステンレス鋼製品を開発・製造いたします。お気軽にご相談ください。</p>
+            <a href="contact.html" class="btn btn-primary">技術相談をする</a>
+        </div>
+    </section>
+</main>
     <!-- ここまで各ページの<main>コンテンツ -->
 
     <footer class="site-footer">
