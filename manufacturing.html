@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製造プロセス - XYZ精密圧延株式会社</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
+                <h1>XYZ精密圧延株式会社</h1>
+            </a>
+            <nav>
+                <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="products.html">製品情報</a></li>
+                    <li><a href="manufacturing.html" class="active">製造プロセス</a></li>
+                    <li><a href="about.html">企業情報</a></li>
+                    <li><a href="investors.html">投資家向け情報</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title-bar">
+            <div class="container" data-aos="fade-in">
+                <h1>製造プロセス</h1>
+                <p>最高の品質を生み出す、当社の精密再圧延技術</p>
+            </div>
+        </section>
+
+        <section id="process-intro" class="container page-section">
+             <p class="lead-text" data-aos="fade-up">当社は、最新鋭の設備と長年培ってきたノウハウを融合させ、μm（マイクロメートル）単位の精度を実現する精密再圧延プロセスを確立しています。各工程での厳格な品質管理により、お客様に信頼される製品をお届けします。</p>
+        </section>
+
+        <section id="process-steps" class="container page-section">
+            <h2 data-aos="fade-up">再圧延プロセス ステップガイド</h2>
+            <div class="process-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon"><i class="fas fa-warehouse"></i></div>
+                    <div class="timeline-content">
+                        <h3>1. 原材料受入・検査</h3>
+                        <img src="img/process-step1.jpg" alt="原材料受入検査のイメージ" class="process-image">
+                        <p>厳選された高品質なステンレス鋼コイル（母材）を受け入れ、成分、寸法、表面状態などを厳密に検査します。</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon"><i class="fas fa-industry"></i></div>
+                    <div class="timeline-content">
+                        <h3>2. 前処理 (焼鈍・酸洗)</h3>
+                        <img src="img/process-step2.jpg" alt="焼鈍・酸洗のイメージ" class="process-image">
+                        <p>圧延加工に適した材料特性を得るため、必要に応じて焼鈍（熱処理）や酸洗（表面酸化スケール除去）を行います。</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon"><i class="fas fa-cogs"></i></div>
+                    <div class="timeline-content">
+                        <h3>3. 精密冷間圧延</h3>
+                        <img src="img/process-step3.jpg" alt="精密冷間圧延のイメージ" class="process-image">
+                        <p>高性能多段圧延機（例：20段センジマーミル）を使用し、常温で圧力をかけて徐々に薄く延ばしていきます。圧延油の管理とロールの精密研磨が重要です。</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon"><i class="fas fa-thermometer-half"></i></div>
+                    <div class="timeline-content">
+                        <h3>4. 中間焼鈍・最終焼鈍</h3>
+                        <img src="img/process-step4.jpg" alt="焼鈍炉のイメージ" class="process-image">
+                        <p>加工硬化した材料を軟化させ、延性を回復させるために、制御された雰囲気中で熱処理を行います。これにより、さらなる圧延や最終製品の特性調整が可能です。</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon"><i class="fas fa-cut"></i></div>
+                    <div class="timeline-content">
+                        <h3>5. スリット・レベラー加工</h3>
+                        <img src="img/process-step5.jpg" alt="スリット加工のイメージ" class="process-image">
+                        <p>お客様の要求幅に精密にスリット（切断）し、平坦度を矯正するレベラー加工を行います。</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <div class="timeline-content">
+                        <h3>6. 最終検査・梱包・出荷</h3>
+                        <img src="img/process-step6.jpg" alt="最終検査と梱包のイメージ" class="process-image">
+                        <p>寸法、表面品質、機械的特性などを最終検査し、合格した製品を丁寧に梱包して出荷します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quality-control" class="container page-section bg-light">
+            <h2 data-aos="fade-up">徹底した品質管理</h2>
+            <div class="quality-features">
+                <div class="quality-feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-microscope"></i>
+                    <h4>先進の検査機器</h4>
+                    <p>寸法測定器、表面粗さ計、金属組織顕微鏡など、最新の検査機器を駆使しています。</p>
+                </div>
+                <div class="quality-feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-certificate"></i>
+                    <h4>国際規格認証</h4>
+                    <p>ISO9001認証を取得し、国際基準に基づいた品質マネジメントシステムを運用しています。</p>
+                </div>
+                <div class="quality-feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-user-check"></i>
+                    <h4>熟練の技術者</h4>
+                    <p>経験豊富な技術者が、各工程で細心の注意を払い、品質の維持・向上に努めています。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+                    <h3>XYZ精密圧延株式会社</h3>
+                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                    <h4>サイトマップ</h4>
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="products.html">製品情報</a></li>
+                        <li><a href="manufacturing.html">製造プロセス</a></li>
+                        <li><a href="about.html">企業情報</a></li>
+                        <li><a href="investors.html">投資家向け情報</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">サイトポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+                    <h4>フォローする</h4>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
