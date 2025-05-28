@@ -356,71 +356,71 @@ nav ul li a.active::after { /* アクティブ時の下線を常に表示 */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* カード幅調整 */
     gap: 35px; /* 間隔調整 */
 }
-.news-item {
-    background-color: #fff;
+
+/* カード共通のスタイル変更（ニュース、製品など） */
+.news-item, .product-card, .strength-item /* strength-itemも同様のスタイルに */ {
+    background-color: var(--bg-dark-accent); /* カード背景色 */
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-lg); /* 角丸大きく */
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
     display: flex;
     flex-direction: column;
+    color: var(--text-color-dark-bg); /* カード内のテキスト色 */
 }
-.news-item:hover {
-    transform: translateY(-8px); /* 浮き上がりを大きく */
-    box-shadow: var(--shadow-lg);
-}
-.news-item img {
-    width: 100%;
-    height: 220px; /* 高さを少し調整 */
-    object-fit: cover;
-    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; /* 上部のみ角丸 */
-}
-.news-item-content { /* テキストコンテンツ用コンテナ */
-    padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-.news-item h3 {
-    font-size: 1.5em; /* 大きく */
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-.news-item .news-date {
-    font-size: 0.9em;
-    color: var(--text-color-light);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-.news-item .news-date i {
-    margin-right: 6px;
-    color: var(--secondary-color);
-}
-.news-item p {
-    font-size: 1em; /* 少し大きく */
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-.news-item .read-more {
-    display: inline-block;
-    color: var(--secondary-color);
-    font-weight: 600;
-    text-transform: uppercase; /* 大文字に */
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-}
-.news-item .read-more i { /* 矢印アイコン */
-    margin-left: 5px;
-    transition: transform var(--transition-speed) ease;
-}
-.news-item .read-more:hover i {
-    transform: translateX(3px);
+.news-item:hover, .product-card:hover, .strength-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: var(--secondary-color); /* ホバーでボーダー色変更 */
 }
 
+.news-item img, .product-card img {
+    /* ... 画像スタイルは前回のでも良いが、高さを調整するかも ... */
+    height: 200px; /* 例 */
+    filter: grayscale(30%) contrast(110%); /* 画像に少しエフェクト */
+    transition: filter var(--transition-speed) ease, transform 0.5s ease;
+}
+.news-item:hover img, .product-card:hover img {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.1);
+}
+
+.news-item-content, .product-card-content, .strength-item /* strength-itemのテキストコンテナ */ {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.news-item h3, .product-card h3, .strength-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #fff; /* 見出しの色 */
+    font-weight: 600;
+}
+.news-item .news-date i, .strength-item i /* アイコンの色 */ {
+    color: var(--secondary-color);
+}
+.news-item p, .product-card p, .strength-item p {
+    color: var(--text-color-dark-bg);
+    opacity: 0.85;
+}
+.news-item .read-more, .product-card .btn { /* ボタン/リンク */
+    /* ... ボタンのスタイルは#heroのボタンを参考に統一感を出す ... */
+    margin-top: auto; /* ボタンをカード下部に配置 */
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.news-item .read-more:hover, .product-card .btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-dark); /* ボタンテキスト色を暗く */
+}
 
 /* === トップページ: 強み === */
 #company-strengths {
@@ -1293,4 +1293,39 @@ footer {
 @keyframes modalClose {
    from { opacity: 1; transform: translateY(0) scale(1); }
    to { opacity: 0; transform: translateY(-30px) scale(0.95); }
+}
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+}
+.scroll-down-indicator a {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.8em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scroll-down-indicator span {
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: rgba(255,255,255,0.7);
+    margin: 2px auto;
+    animation: scrollIndicator 1.5s infinite ease-out;
+}
+.scroll-down-indicator span:nth-child(2) { animation-delay: 0.1s; }
+.scroll-down-indicator span:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes scrollIndicator {
+    0% { opacity: 0; transform: translateY(-8px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(8px); }
 }
