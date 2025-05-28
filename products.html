@@ -1,6 +1,78 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ精密圧延株式会社 - 革新を圧延する</title> {/* 各ページで適切に変更 */}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- AOS CSS (もし使うなら) -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loading-overlay"> {/* ローディング画面 */}
+        <div class="loader"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img">
+                <span class="logo-text">XYZ精密圧延</span> {/* ロゴテキスト追加 */}
+            </a>
+            <nav class="main-navigation" id="main-nav">
+                <ul>
+                    <li><a href="index.html" data-text="トップ"><span>トップ</span></a></li>
+                    <li><a href="products.html" data-text="製品情報"><span>製品情報</span></a></li>
+                    <li><a href="manufacturing.html" data-text="製造プロセス"><span>製造プロセス</span></a></li>
+                    <li><a href="about.html" data-text="企業情報"><span>企業情報</span></a></li>
+                    <li><a href="investors.html" data-text="投資家情報"><span>投資家情報</span></a></li>
+                    <li><a href="contact.html" data-text="お問い合わせ"><span>お問い合わせ</span></a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-navigation" id="mobile-nav-menu">
+        <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="products.html">製品情報</a></li>
+            <li><a href="manufacturing.html">製造プロセス</a></li>
+            <li><a href="about.html">企業情報</a></li>
+            <li><a href="investors.html">投資家向け情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+        <div class="mobile-nav-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </nav>
+
+    <div class="cursor"></div> {/* カスタムカーソル */}
+    <div class="cursor-follower"></div>
+
+    <!-- ここから各ページの<main>コンテンツ -->
+    <!-- <main> ... </main> -->
+    <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -73,67 +145,7 @@
     <div class="cursor-follower"></div>
 
     <!-- ここから各ページの<main>コンテンツ -->
-<main>
-    <section class="page-title-section text-center">
-        <div class="container">
-            <h1>製品ラインナップ</h1>
-            <p class="lead-text">最先端の技術で圧延された、高品質ステンレス鋼製品</p>
-        </div>
-    </section>
-
-    <section class="product-slider-section page-section">
-        <div class="container">
-            <h2 class="section-title text-center">製品カテゴリ</h2>
-            <div class="swiper-container product-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="product-card-slide">
-                            <img src="img/product-image-01.jpg" alt="超薄ステンレス箔">
-                            <div class="product-info">
-                                <h3>超薄ステンレス箔</h3>
-                                <p>0.005mmからの超精密圧延。電子部品、医療分野に最適。</p>
-                                <a href="#" class="btn btn-sm btn-primary-outline product-detail-trigger" data-product-id="p001">詳細を見る</a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* ... 他5つのスライド ... */}
-                    <div class="swiper-slide">
-                        <div class="product-card-slide">
-                            <img src="img/product-image-02.jpg" alt="高強度ステンレス鋼板">
-                            <div class="product-info">
-                                <h3>高強度ステンレス鋼板</h3>
-                                <p>優れた機械特性と耐食性。航空宇宙、自動車産業へ。</p>
-                                <a href="#" class="btn btn-sm btn-primary-outline product-detail-trigger" data-product-id="p002">詳細を見る</a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* ... (合計6つになるように) ... */}
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
-    {/* 製品詳細モーダル (GSAPでアニメーション) */}
-    <div class="product-modal" id="product-detail-modal">
-        <div class="modal-content">
-            <button class="modal-close-btn"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-                {/* JSでコンテンツをロード */}
-            </div>
-        </div>
-    </div>
-
-    <section class="custom-solutions-section page-section bg-light-section">
-        <div class="container text-center">
-            <h2 class="section-title">カスタムソリューション</h2>
-            <p class="lead-text">お客様の特定のニーズに合わせた、オーダーメイドのステンレス鋼製品を開発・製造いたします。お気軽にご相談ください。</p>
-            <a href="contact.html" class="btn btn-primary">技術相談をする</a>
-        </div>
-    </section>
-</main>
+    <!-- <main> ... </main> -->
     <!-- ここまで各ページの<main>コンテンツ -->
 
     <footer class="site-footer">
@@ -191,107 +203,18 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-<body>
-<header>
-    <div class="container">
-        <a href="index.html" class="logo-link">
-            <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
-            <h1>XYZ精密圧延株式会社</h1>
-        </a>
-        <nav>
-            <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            <ul id="nav-menu">
-                <li><a href="index.html" class="active">トップ</a></li>
-                <li><a href="products.html">製品情報</a></li>
-                <li><a href="manufacturing.html">製造プロセス</a></li>
-                <li><a href="about.html">企業情報</a></li>
-                <li><a href="investors.html">投資家向け情報</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <!-- ここまで各ページの<main>コンテンツ -->
 
-    <main>
-        <section class="page-title-bar">
-            <div class="container" data-aos="fade-in">
-                <h1>製品情報</h1>
-                <p>高品質なステンレス鋼製品ラインナップ</p>
-            </div>
-        </section>
-
-        <section id="products-overview" class="container page-section">
-            <p class="lead-text" data-aos="fade-up">当社は、オーステナイト系、フェライト系、マルテンサイト系など、多種多様なステンレス鋼種を取り扱っており、お客様の特定の用途や要件に合わせた精密圧延品を提供しています。薄板、極薄箔、特殊形状品など、幅広いニーズにお応えします。</p>
-        </section>
-
-        <section id="product-gallery" class="container page-section">
-            <h2 data-aos="fade-up">製品カテゴリ</h2>
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="img/product1.jpg" alt="超薄ステンレス箔">
-                    <div class="product-card-content">
-                        <h3>超薄ステンレス箔 (SUS304, SUS316L)</h3>
-                        <p>厚さ0.01mmからの精密圧延。電子部品、医療機器、精密バネなどに最適。</p>
-                        <button class="btn btn-secondary product-detail-toggle" data-product-id="p001"><i class="fas fa-search-plus"></i> 詳細を見る</button>
-                    </div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="img/product2.jpg" alt="高強度ステンレス鋼板">
-                    <div class="product-card-content">
-                        <h3>高強度ステンレス鋼板 (SUS630, SUS631)</h3>
-                        <p>優れた強度と耐食性。航空宇宙部品、自動車部品、産業機械に。</p>
-                        <button class="btn btn-secondary product-detail-toggle" data-product-id="p002"><i class="fas fa-search-plus"></i> 詳細を見る</button>
-                    </div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="img/product3.jpg" alt="耐熱ステンレス鋼">
-                    <div class="product-card-content">
-                        <h3>耐熱ステンレス鋼 (SUS310S, SUS309S)</h3>
-                        <p>高温環境下での優れた耐久性。熱交換器、炉材、工業用バーナー部品に。</p>
-                        <button class="btn btn-secondary product-detail-toggle" data-product-id="p003"><i class="fas fa-search-plus"></i> 詳細を見る</button>
-                    </div>
-                </div>
-                <!-- 他の製品カードを追加する場合も data-aos 属性を設定 -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="img/product4_placeholder.jpg" alt="特殊表面仕上げステンレス"> <!-- ダミー画像 -->
-                    <div class="product-card-content">
-                        <h3>特殊表面仕上げステンレス</h3>
-                        <p>鏡面、ヘアライン、エンボス等、意匠性・機能性に優れた表面仕上げを提供。</p>
-                        <button class="btn btn-secondary product-detail-toggle" data-product-id="p004"><i class="fas fa-search-plus"></i> 詳細を見る</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 製品詳細モーダル (JavaScriptで制御) -->
-        <div id="product-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-button">×</span>
-                <img id="modal-img" src="" alt="製品画像">
-                <h3 id="modal-title"></h3>
-                <p id="modal-description"></p>
-                <h4><i class="fas fa-clipboard-list"></i> 仕様</h4>
-                <table id="modal-specs">
-                    <!-- 仕様はJavaScriptで動的に挿入 -->
-                </table>
-                <p>詳細な仕様やカスタム対応については、お気軽にお問い合わせください。</p>
-                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;"><i class="fas fa-envelope"></i> この製品について問い合わせる</a>
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
-                    <h3>XYZ精密圧延株式会社</h3>
-                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
-                    <p>TEL: 03-1234-5678</p>
-                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo-text">XYZ精密圧延株式会社</h3>
+                    <p>革新的な圧延技術で、未来の産業を支えます。</p>
+                    <p>〒100-0005 東京都千代田区丸の内X-X-X</p>
                 </div>
-                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
-                    <h4>サイトマップ</h4>
+                <div class="footer-links">
+                    <h4>クイックリンク</h4>
                     <ul>
                         <li><a href="index.html">トップ</a></li>
                         <li><a href="products.html">製品情報</a></li>
@@ -299,24 +222,41 @@
                         <li><a href="about.html">企業情報</a></li>
                         <li><a href="investors.html">投資家向け情報</a></li>
                         <li><a href="contact.html">お問い合わせ</a></li>
-                        <li><a href="#">プライバシーポリシー</a></li>
-                        <li><a href="#">サイトポリシー</a></li>
                     </ul>
                 </div>
-                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
-                    <h4>フォローする</h4>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <div class="footer-contact">
+                    <h4>お問い合わせ</h4>
+                    <p><a href="tel:03-1234-5678">TEL: 03-1234-5678</a></p>
+                    <p><a href="mailto:info@xyz-precision.co.jp">info@xyz-precision.co.jp</a></p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
-            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
+            <div class="copyright">
+                <p>© <span id="current-year"></span> XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- AOS (Animate On Scroll) Library JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script> {/* スムーススクロール用 */}
+
+
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS (もし使うなら) -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    
+    <!-- Chart.js (投資家情報ページで読み込む) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+    <!-- Your Script -->
     <script src="js/script.js"></script>
 </body>
 </html>
