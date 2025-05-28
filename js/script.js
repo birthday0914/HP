@@ -386,4 +386,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log("All scripts initialized. Let's roll!");
 
-}); // End of DOMContentLoaded
+; // End of DOMContentLoaded})
+
