@@ -1,172 +1,185 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - XYZ精密圧延株式会社</title>
 
-    <title>Stitch Design - Contact Us</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Public Sans"', '"Noto Sans"', 'sans-serif'],
-            },
-            colors: {
-              'brand-dark': '#0e141b',
-              'brand-medium': '#4e7397',
-              'brand-light-gray': '#d0dbe7',
-              'brand-bg-gray': '#e7edf3',
-              'brand-primary': '#1465b7',
-              'brand-bg-main': '#f8fafc',
-            }
-          }
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-slate-50 justify-between group/design-root overflow-x-hidden"
-    >
-      <div>
-        <div class="flex items-center bg-slate-50 p-4 pb-2 justify-between">
-          <a href="index.html" class="text-[#0e141b] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-            </svg>
-          </a>
-          <h2 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Contact Us</h2>
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Maps API (必要であればAPIキーを設定) -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
+                <h1>XYZ精密圧延株式会社</h1>
+            </a>
+            <nav>
+                <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="products.html">製品情報</a></li>
+                    <li><a href="manufacturing.html">製造プロセス</a></li>
+                    <li><a href="about.html">企業情報</a></li>
+                    <li><a href="investors.html">投資家向け情報</a></li>
+                    <li><a href="contact.html" class="active">お問い合わせ</a></li>
+                </ul>
+            </nav>
         </div>
-        <h2 class="text-[#0e141b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Get in touch</h2>
-        <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
-          We're here to help. Reach out to us with any questions or inquiries, and we'll get back to you promptly.
-        </p>
-        <form id="contactForm">
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-                <input
-                placeholder="Your Name"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] focus:border-none h-14 placeholder:text-[#4e7397] p-4 text-base font-normal leading-normal"
-                value=""
-                />
-            </label>
+    </header>
+
+    <main>
+        <section class="page-title-bar">
+            <div class="container" data-aos="fade-in">
+                <h1>お問い合わせ</h1>
+                <p>お気軽にご連絡ください</p>
             </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-                <input
-                type="email"
-                placeholder="Your Email"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] focus:border-none h-14 placeholder:text-[#4e7397] p-4 text-base font-normal leading-normal"
-                value=""
-                />
-            </label>
+        </section>
+
+        <section id="contact-form-section" class="container page-section">
+            <h2 data-aos="fade-up">お問い合わせフォーム</h2>
+            <p data-aos="fade-up" data-aos-delay="100">製品、技術、採用、その他当社に関するご質問やご相談は、下記フォームよりお寄せください。担当者より折り返しご連絡いたします。（<span class="required">*</span>は必須項目です）</p>
+            <form id="contact-form" action="#" method="POST" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+                </div>
+                <div class="form-group">
+                    <label for="company">会社名</label>
+                    <input type="text" id="company" name="company" placeholder="例：ABC株式会社">
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="例：taro.yamada@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" placeholder="例：090-1234-5678">
+                </div>
+                <div class="form-group">
+                    <label for="subject">件名 <span class="required">*</span></label>
+                    <input type="text" id="subject" name="subject" required placeholder="例：製品Aに関する問い合わせ">
+                </div>
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="7" required placeholder="お問い合わせの詳細をご記入ください。"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                    <label for="privacy-policy" class="checkbox-label">
+                        <a href="/privacy.html" target="_blank">プライバシーポリシー</a>に同意します <span class="required">*</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> 送信する</button>
+            </form>
+        </section>
+
+        <section id="direct-contact" class="container page-section bg-light">
+            <h2 data-aos="fade-up">お電話・FAXでのお問い合わせ</h2>
+            <div class="contact-info-grid">
+                <div class="contact-info-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>お電話</h3>
+                    <p><strong>本社代表:</strong> <a href="tel:03-1234-5678">03-1234-5678</a></p>
+                    <p><strong>営業部直通:</strong> <a href="tel:03-1234-5679">03-1234-5679</a></p>
+                    <p>(受付時間: 平日 9:00 - 17:00)</p>
+                </div>
+                <div class="contact-info-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-fax"></i>
+                    <h3>FAX</h3>
+                    <p><strong>本社代表:</strong> 03-1234-5680</p>
+                </div>
+                 <div class="contact-info-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-envelope"></i>
+                    <h3>メール (情報収集用)</h3>
+                    <p><strong>一般問い合わせ:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+                    <p><strong>採用関連:</strong> <a href="mailto:recruit@example.com">recruit@example.com</a></p>
+                </div>
             </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-                <input
-                placeholder="Subject"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] focus:border-none h-14 placeholder:text-[#4e7397] p-4 text-base font-normal leading-normal"
-                value=""
-                />
-            </label>
+        </section>
+
+        <section id="location-map" class="container page-section">
+            <h2 data-aos="fade-up">所在地・アクセス</h2>
+            <div class="location-details">
+                <div class="address-info" data-aos="fade-right" data-aos-delay="100">
+                    <h3><i class="fas fa-building"></i> 本社</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
+                    <p><i class="fas fa-train"></i> JR東京駅 丸の内北口より徒歩5分</p>
+                    <p><i class="fas fa-subway"></i> 地下鉄丸ノ内線 東京駅直結</p>
+
+                    <h3 style="margin-top: 30px;"><i class="fas fa-industry"></i> 工場</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 〒230-0000 神奈川県横浜市鶴見区大黒町4-5-6</p>
+                    <p><i class="fas fa-bus"></i> JR鶴見駅東口より 市営バス「大黒ふ頭」行き乗車、「金属工業団地前」下車徒歩3分</p>
+                </div>
+                <div id="map-container" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Google Mapsなどの埋め込み地図 -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.828039419901!2d139.76454981525902!3d35.68123628019408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1678886400000!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="XYZ精密圧延株式会社 本社所在地">
+                    </iframe>
+                </div>
             </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-                <textarea
-                placeholder="Your Message"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] focus:border-none min-h-36 placeholder:text-[#4e7397] p-4 text-base font-normal leading-normal"
-                ></textarea>
-            </label>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+                    <h3>XYZ精密圧延株式会社</h3>
+                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                    <h4>サイトマップ</h4>
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="products.html">製品情報</a></li>
+                        <li><a href="manufacturing.html">製造プロセス</a></li>
+                        <li><a href="about.html">企業情報</a></li>
+                        <li><a href="investors.html">投資家向け情報</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">サイトポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+                    <h4>フォローする</h4>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            <div class="flex px-4 py-3">
-            <button
-                type="submit"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 flex-1 bg-[#1465b7] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-                <span class="truncate">Send Message</span>
-            </button>
-            </div>
-        </form>
-        <h3 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Our Location</h3>
-        <div class="flex px-4 py-3">
-          <div
-            class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg object-cover"
-            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBalaRg58KCt2GlWPy2u3WcK3K8awA13RyVBcsuesaV5AOFkYUpkMl_SmueV4CUVAGFKcMwxU_EixWbTY1diE9FNrUYiRmhn_bzUfZ2Q5K7AUIOOqVsUEpBv1_5Xhmw4fHWHdrdX3tCGLAyOoS7zQ2dgX6O3a9fg2My8l1IFSeV3r6elCjk1yLGCWi_kIhOZbVn79CrxxVpnhQKlDtwABaSPMqaHL7YS1lwLPPIAFrhgoG_flUZtTmdlYPqpbQSrkUdz3Jmm5URx_T");'
-          ></div>
+            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
         </div>
-        <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-          <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#d0dbe7] py-5">
-            <p class="text-[#4e7397] text-sm font-normal leading-normal">Address</p>
-            <p class="text-[#0e141b] text-sm font-normal leading-normal">123 Steel Street, Industrial Park, Anytown, USA</p>
-          </div>
-          <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#d0dbe7] py-5">
-            <p class="text-[#4e7397] text-sm font-normal leading-normal">Phone</p>
-            <p class="text-[#0e141b] text-sm font-normal leading-normal">+1 (555) 123-4567</p>
-          </div>
-          <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#d0dbe7] py-5">
-            <p class="text-[#4e7397] text-sm font-normal leading-normal">Email</p>
-            <p class="text-[#0e141b] text-sm font-normal leading-normal">info@steelco.com</p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="flex gap-2 border-t border-[#e7edf3] bg-slate-50 px-4 pb-3 pt-2">
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="index.html">
-            <div class="text-[#4e7397] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                <path
-                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
-                ></path>
-              </svg>
-            </div>
-            <p class="text-[#4e7397] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
-          </a>
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="products.html">
-            <div class="text-[#4e7397] flex h-8 items-center justify-center" data-icon="Package" data-size="24px" data-weight="regular"> <!-- Icon should be SquaresFour -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"> <!-- Placeholder, should be SquaresFour -->
-                <path
-                  d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"
-                ></path>
-              </svg>
-            </div>
-            <p class="text-[#4e7397] text-xs font-medium leading-normal tracking-[0.015em]">Products</p>
-          </a>
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#4e7397]" href="about.html">
-            <div class="text-[#4e7397] flex h-8 items-center justify-center" data-icon="Info" data-size="24px" data-weight="regular">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                <path
-                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"
-                ></path>
-              </svg>
-            </div>
-            <p class="text-[#4e7397] text-xs font-medium leading-normal tracking-[0.015em]">About</p>
-          </a>
-          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#0e141b]" href="contact.html">
-            <div class="text-[#0e141b] flex h-8 items-center justify-center" data-icon="Envelope" data-size="24px" data-weight="fill">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                <path
-                  d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"
-                ></path>
-              </svg>
-            </div>
-            <p class="text-[#0e141b] text-xs font-medium leading-normal tracking-[0.015em]">Contact</p>
-          </a>
-        </div>
-        <div class="h-5 bg-slate-50"></div>
-      </div>
-    </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
-  </body>
+</body>
 </html>
