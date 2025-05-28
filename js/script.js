@@ -1,3 +1,26 @@
+// js/script.js の最初の方に追加
+if (typeof gsap !== 'undefined') {
+    gsap.from("#hero h2", { duration: 1.2, y: 50, opacity: 0, delay: 0.5, ease: "power3.out" });
+    gsap.from("#hero p", { duration: 1.2, y: 30, opacity: 0, delay: 0.8, ease: "power3.out" });
+    gsap.from("#hero .btn", { duration: 1, y: 20, opacity: 0, delay: 1.1, stagger: 0.2, ease: "power3.out" });
+
+    // ScrollTriggerを使った例（AOSと併用または置き換え）
+    // gsap.utils.toArray('.news-item').forEach(item => {
+    //     gsap.from(item, {
+    //         scrollTrigger: {
+    //             trigger: item,
+    //             start: "top 80%", // 上から80%の位置で開始
+    //             toggleActions: "play none none none", //スクロールで再生、戻っても何もしない
+    //         },
+    //         opacity: 0,
+    //         y: 50,
+    //         duration: 0.8,
+    //         ease: "power2.out"
+    //     });
+    // });
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // AOS (Animate On Scroll) ライブラリの初期化
