@@ -106,9 +106,10 @@ h4 { font-size: 1.4em; font-weight: 600; /* Montserrat Semi-Bold */ }
 }
 
 /* === ヘッダー === */
+/* === ヘッダー === */
 header {
     background-color: var(--header-bg);
-    padding: 20px 0; /* 少し高さを出す */
+    padding: 15px 0; /* 高さを少し詰める */
     box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
@@ -116,7 +117,7 @@ header {
     border-bottom: 4px solid transparent;
     transition: border-color var(--transition-speed) ease;
 }
-header.scrolled { /* スクロール時のスタイル（JSでクラス付与） */
+header.scrolled {
     border-bottom-color: var(--primary-color);
 }
 header .container {
@@ -128,71 +129,69 @@ header .container {
     display: flex;
     align-items: center;
     color: var(--text-color);
+    flex-shrink: 0; /* ロゴが縮まないように */
 }
 .logo {
-    height: 55px; /* 少し大きく */
-    margin-right: 15px;
+    height: 48px; /* ロゴサイズを少し小さく */
+    margin-right: 12px; /* 社名との間隔を少し詰める */
     transition: transform var(--transition-speed) ease;
 }
 .logo-link:hover .logo {
     transform: scale(1.05);
 }
-header h1 {
-    font-size: 1.6em; /* 少し大きく */
+header h1 { /* 社名 */
+    font-size: 1.4em; /* 社名のフォントサイズを少し小さく */
     font-weight: 700;
     margin-bottom: 0;
     color: var(--primary-color);
+    white-space: nowrap; /* 社名が改行されないように */
 }
 
+nav {
+    flex-grow: 1; /* ナビゲーションエリアが残りのスペースを埋めるように */
+    display: flex;
+    justify-content: flex-end; /* ナビゲーションを右寄せ */
+}
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center; /* 縦方向中央揃え */
 }
 nav ul li {
-    margin-left: 30px; /* 間隔を広げる */
+    margin-left: 20px; /* ナビゲーション項目の間隔を詰める */
+}
+nav ul li:first-child { /* 最初の項目だけマージンを少し多めに取るか、0にするか調整 */
+    margin-left: 25px; /* もしロゴとの間にスペースが欲しい場合 */
 }
 nav ul li a {
     color: var(--text-color-light);
-    font-weight: 600; /* Open Sans Semi-Bold */
-    font-size: 1em;
-    padding: 10px 5px;
+    font-weight: 600;
+    font-size: 0.95em; /* ナビゲーションのフォントサイズを少し小さく */
+    padding: 8px 4px; /* パディングも微調整 */
     position: relative;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px; /* 字間も少し詰める */
+    white-space: nowrap; /* ナビゲーション項目が改行されないように */
 }
 nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: -2px; /* 少し下に */
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 2.5px; /* 少し太く */
+    height: 2.5px;
     background-color: var(--secondary-color);
     transition: width var(--transition-speed) ease;
 }
 nav ul li a:hover::after,
 nav ul li a.active::after {
-    width: 60%; /* 中央から広がる感じ */
+    width: 60%;
 }
 nav ul li a.active {
     color: var(--primary-color);
 }
 nav ul li a:hover {
     color: var(--primary-color);
-}
-
-#mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8em;
-    color: var(--primary-color);
-    cursor: pointer;
-    padding: 5px;
-    transition: transform var(--transition-speed) ease;
-}
-#mobile-menu-toggle:hover {
-    transform: scale(1.1);
 }
 
 /* === ページ共通タイトルバー === */
