@@ -135,91 +135,54 @@ h4 { font-size: 1.4em; font-weight: 600; /* Montserrat Semi-Bold */ }
 
 /* === ヘッダー === */
 /* === ヘッダー === */
+/* === ヘッダー === */
 header {
     background-color: var(--header-bg);
-    padding: 15px 0; /* 高さを少し詰める */
-    box-shadow: var(--shadow-md);
-    position: sticky;
+    backdrop-filter: blur(10px); /* すりガラス効果 */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* シャドウを少し強く */
+    position: fixed; /* 固定ヘッダーに変更 */
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    border-bottom: 4px solid transparent;
-    transition: border-color var(--transition-speed) ease;
+    border-bottom: 1px solid var(--header-border);
+    transition: background-color var(--transition-speed) ease, padding var(--transition-speed) ease;
 }
 header.scrolled {
-    border-bottom-color: var(--primary-color);
+    background-color: rgba(13, 27, 42, 0.95); /* スクロール時少し濃く */
+    padding: 15px 0; /* スクロール時少し高さを詰める */
 }
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo-link {
-    display: flex;
-    align-items: center;
-    color: var(--text-color);
-    flex-shrink: 0; /* ロゴが縮まないように */
-}
+/* ... (ロゴ、社名部分は前回提案のままでも良いが、色味は調整) ... */
 .logo {
-    height: 48px; /* ロゴサイズを少し小さく */
-    margin-right: 12px; /* 社名との間隔を少し詰める */
-    transition: transform var(--transition-speed) ease;
+    height: 50px; 
+    margin-right: 15px;
 }
-.logo-link:hover .logo {
-    transform: scale(1.05);
-}
-header h1 { /* 社名 */
-    font-size: 1.4em; /* 社名のフォントサイズを少し小さく */
-    font-weight: 700;
-    margin-bottom: 0;
-    color: var(--primary-color);
-    white-space: nowrap; /* 社名が改行されないように */
+header h1 {
+    font-size: 1.5em;
+    color: var(--text-color-dark-bg); /* テキスト色変更 */
 }
 
-nav {
-    flex-grow: 1; /* ナビゲーションエリアが残りのスペースを埋めるように */
-    display: flex;
-    justify-content: flex-end; /* ナビゲーションを右寄せ */
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center; /* 縦方向中央揃え */
-}
-nav ul li {
-    margin-left: 20px; /* ナビゲーション項目の間隔を詰める */
-}
-nav ul li:first-child { /* 最初の項目だけマージンを少し多めに取るか、0にするか調整 */
-    margin-left: 25px; /* もしロゴとの間にスペースが欲しい場合 */
-}
 nav ul li a {
-    color: var(--text-color-light);
+    color: var(--text-color-dark-bg); /* テキスト色変更 */
     font-weight: 600;
-    font-size: 0.95em; /* ナビゲーションのフォントサイズを少し小さく */
-    padding: 8px 4px; /* パディングも微調整 */
+    font-size: 1em; /* 必要なら微調整 */
+    padding: 10px 8px; /* 必要なら微調整 */
     position: relative;
-    letter-spacing: 0.2px; /* 字間も少し詰める */
-    white-space: nowrap; /* ナビゲーション項目が改行されないように */
+    letter-spacing: 0.5px;
+    transition: color var(--transition-speed-fast) ease;
 }
 nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2.5px;
-    background-color: var(--secondary-color);
-    transition: width var(--transition-speed) ease;
+    /* ... (下線スタイルは前回のでも良いし、もっと派手なものに変えてもOK) ... */
+    background-color: var(--secondary-color); /* 下線の色 */
 }
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 60%;
-}
+nav ul li a:hover,
 nav ul li a.active {
-    color: var(--primary-color);
+    color: var(--secondary-color); /* ホバー/アクティブ時の色 */
 }
-nav ul li a:hover {
-    color: var(--primary-color);
+nav ul li a.active::after { /* アクティブ時の下線を常に表示 */
+    width: 60%;
 }
 
 /* === ページ共通タイトルバー === */
