@@ -1,6 +1,6 @@
 /* === 基本リセットと変数定義 === */
 :root {
-    --primary-color:#2360D8; /* ブルー */
+    --primary-color:#0D52ED; /* ブルー */
     --secondary-color: #F27405; /* 鮮やかだが少し落ち着いたオレンジ */
     --accent-color: #5DA9E9; /* 明るいブルー、テクノロジー感とモダンさ */
     
@@ -13,7 +13,7 @@
     --border-color: #dddddd;
     
     --header-bg: #ffffff;
-    --footer-bg: #1E2A3A; /* プライマリーより少し明るく、調和するダークブルー */
+    --footer-bg: #0842A0; /* プライマリーより少し明るく、調和するダークブルー */
     --footer-text-color: #e0e0e0;
 
     --font-primary: 'Open Sans', 'Noto Sans JP', sans-serif;
@@ -44,7 +44,7 @@ body {
     font-family: var(--font-primary);
     line-height: 1.7; /* 少し行間を広げる */
     color: var(--text-color);
-    background-color: #fff;
+    background-color: #F5F7FD;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -197,7 +197,7 @@ nav ul li a:hover {
 /* === ページ共通タイトルバー === */
 .page-title-bar {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    color: #fff;
+    color: #F5F7FD;
     padding: 60px 0; /* パディング調整 */
     text-align: center;
     border-bottom: 5px solid var(--secondary-color);
