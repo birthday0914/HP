@@ -3,28 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My HP</title>
-    <meta http-equiv="refresh" content="0; url=products.html">
-    <!-- または、以下のようにリンクを設置 -->
-    <!--
-    <style>
-        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
-        a { margin: 10px; font-size: 1.2em; }
-    </style>
-    -->
+    <title>XYZ精密圧延株式会社 - 高品質ステンレス鋼</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- <p>リダイレクトしています... <a href="products.html">products.htmlへ</a></p> -->
-    <!-- または -->
-    <!--
-    <h1>ウェブサイトへようこそ</h1>
-    <nav>
-        <a href="products.html">製品情報 (Products)</a>
-        <a href="process.html">製造工程 (Process)</a>
-        <a href="about.html">会社概要 (About Us)</a>
-        <a href="investor.html">投資家情報 (Investor Relations)</a>
-        <a href="contact.html">お問い合わせ (Contact Us)</a>
-    </nav>
-    -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
+                <h1>XYZ精密圧延株式会社</h1>
+            </a>
+            <nav>
+                <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="active">トップ</a></li>
+                    <li><a href="products.html">製品情報</a></li>
+                    <li><a href="manufacturing.html">製造プロセス</a></li>
+                    <li><a href="about.html">企業情報</a></li>
+                    <li><a href="investors.html">投資家向け情報</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content" data-aos="fade-in" data-aos-delay="200">
+                <h2>革新を圧延する。未来を形作る。</h2>
+                <p>最高品質のステンレス鋼で、お客様のビジョンを現実に。</p>
+                <a href="products.html" class="btn btn-secondary"><i class="fas fa-cogs"></i> 製品を見る</a>
+            </div>
+        </section>
+
+        <section id="news" class="container page-section">
+            <h2 data-aos="fade-up">最新ニュース</h2>
+            <div class="news-grid">
+                <article class="news-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/news1.jpg" alt="新技術発表のイメージ">
+                    <div class="news-item-content">
+                        <h3>新技術発表：次世代精密圧延プロセス</h3>
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2024年7月15日</p>
+                        <p>当社は、圧延精度を飛躍的に向上させる新技術を発表しました。これにより、より薄く、より均一なステンレス鋼の供給が可能になります。</p>
+                        <a href="#" class="read-more">続きを読む <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="news-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/news2.jpg" alt="国際展示会出展のイメージ">
+                    <div class="news-item-content">
+                        <h3>国際メタルショー2024に出展</h3>
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2024年6月28日</p>
+                        <p>先日開催された国際メタルショーにて、当社の最新製品ラインナップを展示し、多くの来場者から高い評価をいただきました。</p>
+                        <a href="#" class="read-more">続きを読む <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="news-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/news3.jpg" alt="環境への取り組みのイメージ">
+                    <div class="news-item-content">
+                        <h3>サステナビリティレポート2023を公開</h3>
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2024年5月10日</p>
+                        <p>環境負荷低減への取り組みと成果をまとめた「サステナビリティレポート2023」を公開しました。持続可能な社会の実現に貢献します。</p>
+                        <a href="#" class="read-more">続きを読む <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="company-strengths" class="container page-section bg-light">
+            <h2 data-aos="fade-up">当社の強み</h2>
+            <div class="strengths-grid">
+                <div class="strength-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-medal"></i>
+                    <h3>高品質</h3>
+                    <p>厳格な品質管理体制のもと、最高水準のステンレス鋼製品をお届けします。</p>
+                </div>
+                <div class="strength-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-cogs"></i>
+                    <h3>先進技術</h3>
+                    <p>独自の精密圧延技術により、お客様の多様なニーズにお応えします。</p>
+                </div>
+                <div class="strength-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-users"></i>
+                    <h3>信頼と実績</h3>
+                    <p>長年にわたる経験と実績で、国内外の様々な産業分野で信頼を得ています。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+                    <h3>XYZ精密圧延株式会社</h3>
+                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                    <h4>サイトマップ</h4>
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="products.html">製品情報</a></li>
+                        <li><a href="manufacturing.html">製造プロセス</a></li>
+                        <li><a href="about.html">企業情報</a></li>
+                        <li><a href="investors.html">投資家向け情報</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">サイトポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+                    <h4>フォローする</h4>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
