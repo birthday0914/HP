@@ -264,48 +264,91 @@ nav ul li a.active::after { /* アクティブ時の下線を常に表示 */
 
 /* === トップページ: ヒーローセクション === */
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../img/hero-banner.jpg'); /* CSSで指定 */
+    /* background-image: linear-gradient(45deg, var(--primary-color) 0%, var(--primary-color-dark) 100%); */
+    /* グラデーションまたは高品質な抽象背景画像を使用 */
+    background: linear-gradient(135deg, rgba(0, 82, 212, 0.9) 0%, rgba(0, 58, 164, 0.7) 70%),
+                url('../img/hero-banner-abstract.jpg'); /* 新しい抽象的な背景画像 */
     background-size: cover;
-    background-position: center center; /* 中央揃え */
-    background-attachment: fixed; /* パララックス風効果 */
+    background-position: center center;
     color: #fff;
-    text-align: center;
-    padding: 150px 20px; /* より大きく */
-    min-height: 80vh;
+    text-align: left; /* テキスト左寄せに変更 */
+    padding: 180px 0; /* パディングを大きく */
+    min-height: 100vh; /* 画面の高さいっぱいに */
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative; /* 疑似要素用 */
+    position: relative;
+    overflow: hidden; /* 内部の装飾要素がはみ出ないように */
 }
-#hero::before { /* オーバーレイグラデーションで深みを */
+
+/* ヒーローセクションの装飾的な要素 (例) */
+#hero::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to bottom, rgba(10, 43, 76, 0.2) 0%, rgba(10, 43, 76, 0.7) 100%);
+    top: -10%; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0, 201, 255, 0.15) 0%, rgba(0, 201, 255, 0) 70%);
+    border-radius: 50%;
+    animation: pulseEffect 8s infinite ease-in-out;
     z-index: 1;
 }
-#hero .hero-content {
-    max-width: 800px; /* 少し広げる */
-    position: relative; /* テキストを疑似要素より手前に */
+#hero::after {
+    content: "";
+    position: absolute;
+    bottom: -15%; left: -5%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(101, 151, 255, 0.1) 0%, rgba(101, 151, 255, 0) 70%);
+    border-radius: 50%;
+    animation: pulseEffect 10s infinite 2s ease-in-out; /* 遅延開始 */
+    z-index: 1;
+}
+
+@keyframes pulseEffect {
+    0%, 100% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+
+#hero .container { /* ヒーロー内のコンテナ */
+    position: relative;
     z-index: 2;
 }
+
+#hero .hero-content {
+    max-width: 700px;
+}
 #hero h2 {
-    font-size: 3.8em; /* さらに大きく */
-    font-weight: 700;
-    margin-bottom: 0.5em;
+    font-size: 4.5em; /* さらに大胆に */
+    font-weight: 700; /* Montserrat Bold */
+    line-height: 1.1;
+    margin-bottom: 0.6em;
     color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* シャドウを強く */
+    text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    /* テキストにグラデーションをかける場合 (ブラウザ対応注意) */
+    /* background: -webkit-linear-gradient(45deg, #eee, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 #hero p {
-    font-size: 1.6em; /* 大きく */
+    font-size: 1.5em;
     font-family: var(--font-primary);
-    margin-bottom: 1.8em;
-    opacity: 0.95;
+    margin-bottom: 2em;
+    opacity: 0.9;
+    max-width: 600px;
 }
 #hero .btn {
     font-size: 1.1em;
-    padding: 16px 35px;
+    padding: 18px 40px; /* ボタンも大きく */
+    border-radius: 50px; /* 丸みを帯びたボタン */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(var(--secondary-color-rgb), 0.4); /* ボタンに合わせた色の影 */
+    transition: all var(--transition-speed) ease, transform 0.2s ease-out;
 }
+#hero .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(var(--secondary-color-rgb), 0.5);
+}
+/* --secondary-color-rgb はJSで設定するか、CSSで手動で定義してください。例: 0, 201, 255 */
 
 /* === トップページ: ニュース === */
 .news-grid {
