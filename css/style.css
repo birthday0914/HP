@@ -1255,3 +1255,9 @@ footer {
     --primary-color-rgb: 10, 43, 76;
     --accent-color-rgb: 93, 169, 233;
 }
+
+/* modalCloseアニメーションをstyle.cssの末尾などに追加 */
+@keyframes modalClose {
+   from { opacity: 1; transform: translateY(0) scale(1); }
+   to { opacity: 0; transform: translateY(-30px) scale(0.95); }
+}
