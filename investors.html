@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投資家向け情報 - XYZ精密圧延株式会社</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Chart.js (投資家向けページでのみ使用) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
+                <h1>XYZ精密圧延株式会社</h1>
+            </a>
+            <nav>
+                <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="products.html">製品情報</a></li>
+                    <li><a href="manufacturing.html">製造プロセス</a></li>
+                    <li><a href="about.html">企業情報</a></li>
+                    <li><a href="investors.html" class="active">投資家向け情報</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title-bar">
+            <div class="container" data-aos="fade-in">
+                <h1>投資家向け情報</h1>
+                <p>持続的成長と企業価値向上への取り組み</p>
+            </div>
+        </section>
+
+        <section id="ir-message" class="container page-section">
+            <h2 data-aos="fade-up">投資家の皆様へ</h2>
+            <p class="lead-text" data-aos="fade-up" data-aos-delay="100">平素は格別のご支援を賜り、厚く御礼申し上げます。当社は、精密圧延技術を核とした事業展開により、安定的な成長と企業価値の向上を目指しております。今後とも、透明性の高い情報開示に努め、株主・投資家の皆様との建設的な対話を重視してまいります。ご理解とご支援を賜りますようお願い申し上げます。</p>
+        </section>
+
+        <section id="financial-highlights" class="container page-section bg-light">
+            <h2 data-aos="fade-up">財務ハイライト</h2>
+            <div class="financial-charts" data-aos="fade-up" data-aos-delay="100">
+                <div class="chart-container">
+                    <h3><i class="fas fa-chart-bar"></i> 売上高推移</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3><i class="fas fa-chart-line"></i> 営業利益推移</h3>
+                    <canvas id="profitChart"></canvas>
+                </div>
+            </div>
+            <div class="financial-summary" data-aos="fade-up" data-aos-delay="200">
+                <h4>主要経営指標 (2023年度)</h4>
+                <table>
+                    <tr><th>売上高</th><td>150億円</td></tr>
+                    <tr><th>営業利益</th><td>15億円</td></tr>
+                    <tr><th>経常利益</th><td>14億円</td></tr>
+                    <tr><th>当期純利益</th><td>10億円</td></tr>
+                    <tr><th>自己資本比率</th><td>60%</td></tr>
+                    <tr><th>ROE (自己資本利益率)</th><td>12.5%</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="ir-library" class="container page-section">
+            <h2 data-aos="fade-up">IRライブラリ</h2>
+            <p data-aos="fade-up" data-aos-delay="50">決算短信、有価証券報告書、株主通信などのIR関連資料を掲載しています。</p>
+            <ul class="document-list" data-aos="fade-up" data-aos-delay="100">
+                <li>
+                    <a href="documents/financial_results_2023q4.pdf" target="_blank" class="document-link">
+                        <i class="fas fa-file-pdf"></i> 2023年度 第4四半期 決算短信
+                    </a>
+                    <span class="document-date">(2024年4月26日)</span>
+                </li>
+                <li>
+                    <a href="documents/annual_report_2023.pdf" target="_blank" class="document-link">
+                        <i class="fas fa-file-pdf"></i> 2023年度 有価証券報告書
+                    </a>
+                    <span class="document-date">(2024年6月28日)</span>
+                </li>
+                <li>
+                    <a href="documents/presentation_material_2023.pdf" target="_blank" class="document-link">
+                        <i class="fas fa-file-powerpoint"></i> 2023年度 決算説明会資料
+                    </a>
+                    <span class="document-date">(2024年5月10日)</span>
+                </li>
+                <li>
+                    <a href="documents/shareholder_newsletter_2024h1.pdf" target="_blank" class="document-link">
+                        <i class="fas fa-file-alt"></i> 株主通信 2024年上半期号
+                    </a>
+                    <span class="document-date">(2024年7月10日)</span>
+                </li>
+                <li>
+                    <a href="documents/csr_report_2023.pdf" target="_blank" class="document-link">
+                        <i class="fas fa-leaf"></i> CSRレポート 2023
+                    </a>
+                     <span class="document-date">(2024年5月15日)</span>
+                </li>
+            </ul>
+            <p class="note" data-aos="fade-up" data-aos-delay="150">※PDFファイルをご覧いただくには、Adobe Readerが必要です。</p>
+        </section>
+
+        <section id="ir-calendar" class="container page-section bg-light" data-aos="fade-up">
+            <h2><i class="far fa-calendar-alt"></i> IRカレンダー</h2>
+            <ul>
+                <li><strong>2024年10月下旬:</strong> 2024年度 第2四半期決算発表予定</li>
+                <li><strong>2025年1月下旬:</strong> 2024年度 第3四半期決算発表予定</li>
+                <li><strong>2025年4月下旬:</strong> 2024年度 通期決算発表予定</li>
+                <li><strong>2025年6月下旬:</strong> 定時株主総会開催予定</li>
+            </ul>
+        </section>
+        
+        <section id="disclaimer" class="container page-section" data-aos="fade-up">
+            <h2><i class="fas fa-exclamation-triangle"></i> 免責事項</h2>
+            <p>当ウェブサイトに掲載されている情報には、当社の計画、見通し、戦略、将来の業績に関する記述が含まれています。これらは、現在入手可能な情報に基づいて作成されたものであり、既知または未知のリスクや不確実性を含んでいます。実際の業績は、経済情勢、市場動向、競争状況、技術革新、規制変更など様々な要因により、これらの記述とは大きく異なる結果となる可能性があります。当ウェブサイトの情報は、投資勧誘を目的としたものではありません。投資に関する決定は、ご自身の判断において行われるようお願いいたします。</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+                    <h3>XYZ精密圧延株式会社</h3>
+                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                    <h4>サイトマップ</h4>
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="products.html">製品情報</a></li>
+                        <li><a href="manufacturing.html">製造プロセス</a></li>
+                        <li><a href="about.html">企業情報</a></li>
+                        <li><a href="investors.html">投資家向け情報</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">サイトポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+                    <h4>フォローする</h4>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
