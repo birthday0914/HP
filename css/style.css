@@ -1,33 +1,61 @@
 /* === 基本リセットと変数定義 === */
 :root {
-    --primary-color:#0D52ED; /* ブルー */
-    --secondary-color: #F27405; /* 鮮やかだが少し落ち着いたオレンジ */
-    --accent-color: #5DA9E9; /* 明るいブルー、テクノロジー感とモダンさ */
-    
-    --text-color: #333333;
-    --text-color-light: #555555;
-    --heading-color: var(--primary-color);
+    /* 青基調の再定義 */
+    --primary-color: #0052D4; /* より鮮やかなロイヤルブルー */
+    --primary-color-dark: #003AA4; /* グラデーションやホバー用 */
+    --primary-color-light: #6597FF; /* 明るいアクセントブルー */
 
-    --bg-light: #f9f9f9;
-    --bg-medium: #f0f0f0; /* フォームの背景などに */
-    --border-color: #dddddd;
-    
-    --header-bg: #ffffff;
-    --footer-bg: #0842A0; /* プライマリーより少し明るく、調和するダークブルー */
-    --footer-text-color: #e0e0e0;
+    /* アクセントカラー (例: ネオン感のあるシアンまたは鮮やかなオレンジ) */
+    --secondary-color: #00C9FF; /* 鮮やかなシアン */
+    /* --secondary-color: #FF6B00; */ /* もしオレンジを維持するなら、より鮮やかに */
+    --secondary-color-dark: #00A2CC; /* シアンのダーク版 */
 
+    --accent-color: var(--secondary-color); /* 既存のaccentをsecondaryに統一、または別途定義 */
+    
+    --text-color: #E0E6F0; /* 明るい背景に暗い文字が基本だが、ダークモード風も考慮すると逆転も */
+    --text-color-dark-bg: #F0F4F8; /* 暗い背景用の明るいテキスト */
+    --heading-color: #FFFFFF; /* ヒーローなど暗い背景の見出し */
+    --heading-color-light-bg: #0D253F; /* 明るい背景の見出し用ダークブルー */
+
+    --bg-dark: #0D1B2A; /* 全体の背景を暗く、リッチに */
+    --bg-dark-accent: #1C2F42; /* カードなどの背景 */
+    --bg-light: #ffffff; /* 明るいセクションの背景 */
+    
+    --border-color: rgba(255, 255, 255, 0.1); /* 暗い背景用のボーダー */
+    --border-color-light-bg: #DDE2E8; /* 明るい背景用のボーダー */
+    
+    --header-bg: rgba(13, 27, 42, 0.85); /* 半透明のダークヘッダー */
+    --header-border: rgba(255, 255, 255, 0.1);
+    --footer-bg: #08121E; 
+    --footer-text-color: #A0B0C0;
+
+    /* フォントは前回と同じものを想定 */
     --font-primary: 'Open Sans', 'Noto Sans JP', sans-serif;
     --font-heading: 'Montserrat', 'Noto Sans JP', sans-serif;
 
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-    --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
-    --shadow-lg: 0 10px 30px rgba(0,0,0,0.07);
+    --shadow-sm: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-md: 0 8px 16px rgba(0,0,0,0.2);
+    --shadow-lg: 0 12px 24px rgba(0,0,0,0.25);
 
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 12px;
+    --border-radius-sm: 6px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 16px;
 
-    --transition-speed: 0.3s;
+    --transition-speed: 0.4s; /* 少しゆっくりめに */
+    --transition-speed-fast: 0.2s;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    color: var(--text-color-dark-bg); /* デフォルトのテキスト色を明るめに変更 */
+    background-color: var(--bg-dark); /* ボディ全体の背景をダークに */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* 横スクロールバー対策 */
 }
 
 *, *::before, *::after {
