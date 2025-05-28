@@ -6,8 +6,13 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); // SplitTextなしで登録
 
 document.addEventListener('DOMContentLoaded', function() {
+    "use strict"; // 厳格モードは関数の先頭が良い場合も
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); // SplitTextはコメントアウトのまま
+
     const body = document.body;
-    const pageId = body.dataset.page; // 現在のページを識別
+    const pageId = body.dataset.page; // ★ この行がコメントアウトされていないか、正しい位置にあるか確認
+
+    // ... (以降のコード) ...
 
     // --- 0. Smooth Scroll & Lenis (オプション: より滑らかなスクロール体験) ---
     // const lenis = new Lenis()
