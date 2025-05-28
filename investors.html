@@ -73,7 +73,32 @@
     <div class="cursor-follower"></div>
 
     <!-- ここから各ページの<main>コンテンツ -->
-    <!-- <main> ... </main> -->
+<main>
+    <section class="page-title-section text-center">
+        <div class="container">
+            <h1>投資家向け情報</h1>
+            <p class="lead-text">持続的成長と企業価値向上へのコミットメント</p>
+        </div>
+    </section>
+
+    <section class="financial-charts-section page-section">
+        <div class="container">
+            <h2 class="section-title text-center">主要財務データ</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>売上高推移</h3>
+                    <canvas id="salesChart"></canvas> {/* サイズはCSSとChart.jsオプションで制御 */}
+                </div>
+                <div class="chart-container">
+                    <h3>営業利益推移</h3>
+                    <canvas id="profitChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    {/* ... (IRライブラリ、IRカレンダーなどのセクションは前回のを参考に構成) ... */}
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> {/* このページでのみChart.jsを読み込む */}
     <!-- ここまで各ページの<main>コンテンツ -->
 
     <footer class="site-footer">
