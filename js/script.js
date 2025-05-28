@@ -2,7 +2,8 @@
 "use strict";
 
 // GSAPプラグイン登録
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText); // SplitTextを追加
+// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText); // SplitTextを一旦コメントアウト
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); // SplitTextなしで登録
 
 document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
@@ -171,66 +172,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- 5. ヒーローセクション アニメーション (index.html - より詳細に) ---
+     // --- 5. ヒーローセクション アニメーション (index.html - SplitTextを使わない形に一時的に変更) ---
     function initHomePageAnimations() {
         if (pageId === 'home' && document.querySelector('.hero-section')) {
             const heroTitle = document.querySelector('.hero-title');
             const heroSubtitle = document.querySelector('.hero-subtitle');
             const heroButtons = document.querySelectorAll('.hero-cta-buttons .btn');
 
-            // SplitTextでテキストを分割
-            const splitTitle = new SplitText(heroTitle, { type: "lines,words" }); // 行と単語
-            const splitSubtitle = new SplitText(heroSubtitle, { type: "chars,words" }); // 文字と単語
-
-            gsap.set(splitTitle.lines, { overflow: "hidden" }); // 親要素のoverflowをhiddenに
-
-            const homeHeroTl = gsap.timeline({ delay: 0.2 }); // ローディング後少し遅延
+            // SplitTextを使わないシンプルなフェードインに変更
+            const homeHeroTl = gsap.timeline({ delay: 0.2 });
             homeHeroTl
-                .from(splitTitle.words, { // 単語ごとにアニメーション
-                    yPercent: 100,
-                    opacity: 0,
-                    rotationX: -60,
-                    duration: 0.8,
-                    ease: "power3.out",
-                    stagger: 0.05,
-                })
-                .from(splitSubtitle.chars, { // 文字ごとにアニメーション
-                    opacity: 0,
-                    y: 10,
-                    duration: 0.03, // 非常に速く
-                    ease: "power1.inOut",
-                    stagger: {
-                        amount: 0.5, // 全体で0.5秒
-                        from: "random"
-                    }
-                }, "-=0.5")
+                .from(heroTitle, { opacity: 0, y: 50, duration: 1, ease: "power3.out" })
+                .from(heroSubtitle, { opacity: 0, y: 30, duration: 0.8, ease: "power2.out" }, "-=0.6")
                 .from(heroButtons, {
                     opacity: 0,
-                    y: 30,
+                    y: 20,
                     scale: 0.9,
                     duration: 0.7,
-                    ease: "elastic.out(1, 0.75)", // 弾むようなイージング
+                    ease: "elastic.out(1, 0.75)",
                     stagger: 0.15
                 }, "-=0.4");
-
-            // ヒーロー動画の再生速度をスクロールで少し変える (オプション)
-            // const heroVideo = document.getElementById('heroVideo');
-            // if (heroVideo) {
-            //     ScrollTrigger.create({
-            //         trigger: ".hero-section",
-            //         start: "top top",
-            //         end: "bottom top",
-            //         scrub: 1,
-            //         onUpdate: self => {
-            //             let playRate = 1 - self.progress * 0.5; // スクロールするほど遅く
-            //             heroVideo.playbackRate = Math.max(0.2, playRate); // 最低速度0.2
-            //         }
-            //     });
-            // }
         }
     }
     // ローディングが終わってからヒーローアニメーションを開始するように修正済み
-
+    // ... (他のコードもSplitTextを使用している箇所があれば同様に修正またはコメントアウト) ...
+});
 
     // --- 6. パララックス効果 (より細かく) ---
     gsap.utils.toArray(".parallax-bg-image").forEach(bg => {
