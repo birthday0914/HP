@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 homeHeroTl.fromTo(scrollIndicator, {opacity:0, y:20}, {opacity:1, y:0, duration:0.5, ease:'power1.out'}, "-=0.2");
             }
         }
-    }
+
     // ローディング完了後に呼び出されるように変更済み
 
 
