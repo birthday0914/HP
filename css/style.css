@@ -462,18 +462,44 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
 /* === Product Modal === */
 /* ... (前回提案のモーダルスタイルをベースに、フォントや色を調整) ... */
 
-
 /* === Financial Charts (investors.html) === */
-.charts-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-@media (min-width: 768px) { .charts-grid { grid-template-columns: 1fr 1fr; } }
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* モバイルでは1列 */
+    gap: 40px;
+}
+@media (min-width: 992px) { /* --breakpoint-md 以上で2列に */
+    .charts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .chart-container {
     background-color: var(--bg-content-dark);
-    padding: 25px; border-radius: var(--border-radius);
+    padding: 25px;
+    border-radius: var(--border-radius-lg); /* var(--border-radius) から変更 */
     box-shadow: var(--shadow-md);
-    min-height: 350px; /* グラフ表示のための最小高さ */
+    position: relative; /* ★ canvasがコンテナからはみ出ないように */
+    /* ★ グラフの推奨高さを設定 (1スクロールで見えるように調整) */
+    height: 400px; /* 例: 400pxの固定高さ */
+    /* またはビューポート高さの割合で指定 */
+    /* max-height: 60vh; */ /* 例: 画面の高さの60%を最大とする */
 }
-.chart-container h3 { font-size: 1.3rem; margin-bottom: 20px; text-align: center; color: var(--off-white); }
 
+.chart-container h3 {
+    font-size: 1.2rem; /* 少し小さく調整 */
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--off-white);
+    font-weight: 600;
+}
+/* canvas要素自体はコンテナいっぱいに広がるように */
+.chart-container canvas {
+    /* width: 100% !important; */ /* Chart.jsが制御するので不要な場合が多い */
+    /* height: auto !important; */
+    max-width: 100%; /* コンテナからはみ出ないように */
+    /* max-height は Chart.js の maintainAspectRatio: false とコンテナの height で制御 */
+}
 
 /* === Contact Form (contact.html) === */
 .contact-page-section { /* padding-bottom: 0; */ } /* 下のセクションとの連続性 */
