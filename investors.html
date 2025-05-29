@@ -1,133 +1,252 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!DOCTYPE html>
-<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XYZ精密圧延株式会社 - 革新を圧延する</title> {/* 各ページで適切に変更 */}
+    <title>投資家向け情報 - XYZ精密圧延株式会社</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Swiper.js CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- AOS CSS (もし使うなら) -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Your Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="investors">
-    <div class="loading-overlay"> {/* ローディング画面 */}
-        <div class="loader"></div>
+<body data-page="investors"> {/* ページ識別用データ属性 */}
+    <div class="loading-overlay">
+        <div class="loader-logo">XYZ</div>
     </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
     <header class="site-header">
         <div class="container header-container">
-            <a href="index.html" class="logo-link">
+            <a href="index.html" class="logo-link" data-cursor-text="ホームへ">
                 <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img">
-                <span class="logo-text">XYZ精密圧延</span> {/* ロゴテキスト追加 */}
+                <span class="logo-text">XYZ Precision</span>
             </a>
             <nav class="main-navigation" id="main-nav">
                 <ul>
-                    <li><a href="index.html" data-text="トップ"><span>トップ</span></a></li>
-                    <li><a href="products.html" data-text="製品情報"><span>製品情報</span></a></li>
-                    <li><a href="manufacturing.html" data-text="製造プロセス"><span>製造プロセス</span></a></li>
-                    <li><a href="about.html" data-text="企業情報"><span>企業情報</span></a></li>
-                    <li><a href="investors.html" data-text="投資家情報"><span>投資家情報</span></a></li>
-                    <li><a href="contact.html" data-text="お問い合わせ"><span>お問い合わせ</span></a></li>
+                    <li><a href="index.html" class="nav-link" data-text="Top"><span>トップ</span></a></li>
+                    <li><a href="products.html" class="nav-link" data-text="Products"><span>製品情報</span></a></li>
+                    <li><a href="manufacturing.html" class="nav-link" data-text="Process"><span>製造プロセス</span></a></li>
+                    <li><a href="about.html" class="nav-link" data-text="About Us"><span>企業情報</span></a></li>
+                    <li><a href="investors.html" class="nav-link active" data-text="Investors"><span>投資家情報</span></a></li>
+                    <li><a href="contact.html" class="nav-link" data-text="Contact"><span>お問い合わせ</span></a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" data-cursor-stick>
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
             </button>
         </div>
     </header>
 
     <nav class="mobile-navigation" id="mobile-nav-menu">
+        <div class="mobile-nav-header">
+             <a href="index.html" class="logo-link-mobile">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img-mobile">
+                <span class="logo-text-mobile">XYZ Precision</span>
+            </a>
+        </div>
         <ul>
-            <li><a href="index.html">トップ</a></li>
-            <li><a href="products.html">製品情報</a></li>
-            <li><a href="manufacturing.html">製造プロセス</a></li>
-            <li><a href="about.html">企業情報</a></li>
-            <li><a href="investors.html">投資家向け情報</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="index.html" class="mobile-nav-link">トップ</a></li>
+            <li><a href="products.html" class="mobile-nav-link">製品情報</a></li>
+            <li><a href="manufacturing.html" class="mobile-nav-link">製造プロセス</a></li>
+            <li><a href="about.html" class="mobile-nav-link">企業情報</a></li>
+            <li><a href="investors.html" class="mobile-nav-link active">投資家向け情報</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">お問い合わせ</a></li>
         </ul>
         <div class="mobile-nav-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook" data-cursor-text="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </nav>
 
-    <div class="cursor"></div> {/* カスタムカーソル */}
-    <div class="cursor-follower"></div>
+    <main class="main-content">
+        <section class="page-title-section text-center dark-overlay-section" style="background-image: url('img/investors-header-bg.jpg');"> {/* ヘッダー用背景画像 */}
+            <div class="container">
+                <span class="section-tagline light anim-fade-up">For Our Investors</span>
+                <h1 class="anim-fade-up" data-anim-delay="0.1">投資家向け情報</h1>
+                <p class="lead-text light anim-fade-up" data-anim-delay="0.2">持続的成長と企業価値向上へのコミットメントをお伝えします。</p>
+            </div>
+        </section>
 
-    <!-- ここから各ページの<main>コンテンツ -->
-<main>
-    <section class="page-title-section text-center">
-        <div class="container">
-            <h1>投資家向け情報</h1>
-            <p class="lead-text">持続的成長と企業価値向上へのコミットメント</p>
-        </div>
-    </section>
-
-    <section class="financial-charts-section page-section">
-        <div class="container">
-            <h2 class="section-title text-center">主要財務データ</h2>
-            <div class="charts-grid">
-                <div class="chart-container">
-                    <h3>売上高推移</h3>
-                    <canvas id="salesChart"></canvas> {/* サイズはCSSとChart.jsオプションで制御 */}
+        <section id="ir-message-top" class="ir-message-section page-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <h2 class="section-title">投資家の皆様へ</h2>
                 </div>
-                <div class="chart-container">
-                    <h3>営業利益推移</h3>
-                    <canvas id="profitChart"></canvas>
+                <p class="lead-text text-center anim-fade-up" data-anim-delay="0.1">平素は格別のご支援を賜り、厚く御礼申し上げます。XYZ精密圧延株式会社は、精密圧延技術を核とした事業展開により、社会の持続的な発展に貢献するとともに、企業価値の継続的な向上を目指しております。当ページでは、経営戦略、財務状況、株式情報など、投資家の皆様への情報を適時・適切に開示してまいります。今後とも変わらぬご理解とご支援を賜りますよう、心よりお願い申し上げます。</p>
+                <div class="text-center anim-fade-up" data-anim-delay="0.2">
+                    <img src="img/ir-representative-signature.png" alt="代表取締役社長署名イメージ" style="max-width: 250px; margin-top: 20px; opacity:0.8;">
+                    <p style="margin-top: 5px; font-style: italic;">代表取締役社長 山田 太郎</p>
                 </div>
             </div>
-        </div>
-    </section>
-    {/* ... (IRライブラリ、IRカレンダーなどのセクションは前回のを参考に構成) ... */}
-</main>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> {/* このページでのみChart.jsを読み込む */}
-    <!-- ここまで各ページの<main>コンテンツ -->
+        </section>
+
+        <section id="financial-highlights" class="financial-charts-section page-section bg-light-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Performance</span>
+                    <h2 class="section-title">主要財務ハイライト</h2>
+                </div>
+                <div class="charts-grid anim-fade-up" data-anim-delay="0.2">
+                    <div class="chart-container">
+                        <h3><i class="fas fa-chart-bar"></i> 売上高推移 (億円)</h3>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3><i class="fas fa-chart-line"></i> 営業利益推移 (億円)</h3>
+                        <canvas id="profitChart"></canvas>
+                    </div>
+                </div>
+                <div class="financial-summary-table anim-fade-up" data-anim-delay="0.3" style="margin-top: 50px;">
+                    <h3 class="text-center" style="margin-bottom: 20px;">主要経営指標 (2023年度実績)</h3>
+                    <table class="profile-table"> {/* aboutページの会社概要テーブルと類似スタイル想定 */}
+                        <tbody>
+                            <tr><th>売上高</th><td>150億円</td></tr>
+                            <tr><th>営業利益</th><td>15億円</td></tr>
+                            <tr><th>経常利益</th><td>14億円</td></tr>
+                            <tr><th>当期純利益</th><td>10億円</td></tr>
+                            <tr><th>総資産</th><td>200億円</td></tr>
+                            <tr><th>自己資本比率</th><td>60.0%</td></tr>
+                            <tr><th>ROE (自己資本利益率)</th><td>12.5%</td></tr>
+                            <tr><th>一株当たり当期純利益 (EPS)</th><td>250円</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="ir-library" class="ir-library-section page-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Resources</span>
+                    <h2 class="section-title">IRライブラリ</h2>
+                </div>
+                <p class="lead-text text-center anim-fade-up" data-anim-delay="0.1">決算短信、有価証券報告書、株主通信、決算説明会資料など、各種IR資料をダウンロードいただけます。</p>
+                <ul class="document-list anim-fade-up" data-anim-delay="0.2">
+                    <li>
+                        <a href="documents/financial-results-q4-2023.pdf" target="_blank" class="document-link" data-cursor-text="PDFを開く">
+                            <i class="fas fa-file-pdf"></i> 2023年度 第4四半期 決算短信
+                        </a>
+                        <span class="document-date">(2024年4月26日)</span>
+                        <span class="document-size">1.2MB</span>
+                    </li>
+                    <li>
+                        <a href="documents/annual-report-2023.pdf" target="_blank" class="document-link" data-cursor-text="PDFを開く">
+                            <i class="fas fa-file-signature"></i> 2023年度 有価証券報告書
+                        </a>
+                        <span class="document-date">(2024年6月28日)</span>
+                        <span class="document-size">3.5MB</span>
+                    </li>
+                    <li>
+                        <a href="documents/earnings-presentation-q4-2023.pdf" target="_blank" class="document-link" data-cursor-text="PDFを開く">
+                            <i class="fas fa-file-powerpoint"></i> 2023年度 第4四半期 決算説明会資料
+                        </a>
+                        <span class="document-date">(2024年5月10日)</span>
+                        <span class="document-size">2.8MB</span>
+                    </li>
+                    <li>
+                        <a href="documents/shareholder-newsletter-h1-2024.pdf" target="_blank" class="document-link" data-cursor-text="PDFを開く">
+                            <i class="fas fa-newspaper"></i> 株主通信 2024年上半期号
+                        </a>
+                        <span class="document-date">(2024年7月10日)</span>
+                        <span class="document-size">850KB</span>
+                    </li>
+                     <li>
+                        <a href="documents/sustainability-report-2023.pdf" target="_blank" class="document-link" data-cursor-text="PDFを開く">
+                            <i class="fas fa-leaf"></i> サステナビリティレポート 2023
+                        </a>
+                        <span class="document-date">(2024年5月15日)</span>
+                        <span class="document-size">4.1MB</span>
+                    </li>
+                </ul>
+                <p class="text-center note anim-fade-up" data-anim-delay="0.3" style="margin-top:30px;">※PDFファイルをご覧いただくには、Adobe Acrobat Readerが必要です。</p>
+            </div>
+        </section>
+
+        <section id="ir-calendar" class="ir-calendar-section page-section bg-light-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Schedule</span>
+                    <h2 class="section-title">IRカレンダー</h2>
+                </div>
+                <ul class="ir-event-list anim-fade-up" data-anim-delay="0.2">
+                    <li class="ir-event-item">
+                        <span class="event-date">2024年10月28日 (予定)</span>
+                        <h4 class="event-title">2024年度 第2四半期 決算発表</h4>
+                        <p class="event-description">当第2四半期の業績についてご報告いたします。</p>
+                    </li>
+                    <li class="ir-event-item">
+                        <span class="event-date">2025年1月27日 (予定)</span>
+                        <h4 class="event-title">2024年度 第3四半期 決算発表</h4>
+                        <p class="event-description">当第3四半期の業績についてご報告いたします。</p>
+                    </li>
+                    <li class="ir-event-item">
+                        <span class="event-date">2025年4月25日 (予定)</span>
+                        <h4 class="event-title">2024年度 通期決算発表</h4>
+                        <p class="event-description">2024年度通期の業績および次期見通しについてご報告いたします。</p>
+                    </li>
+                    <li class="ir-event-item">
+                        <span class="event-date">2025年6月下旬 (予定)</span>
+                        <h4 class="event-title">第XX期 定時株主総会</h4>
+                        <p class="event-description">詳細につきましては、開催が近づきましたら改めてご案内いたします。</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="disclaimer" class="disclaimer-section page-section">
+            <div class="container anim-fade-up">
+                 <div class="section-header text-center">
+                    <h2 class="section-title"><i class="fas fa-exclamation-triangle" style="color: var(--secondary-color); margin-right: 10px;"></i>免責事項</h2>
+                </div>
+                <div class="disclaimer-content">
+                    <p>当ウェブサイトに掲載されている情報には、当社の計画、見通し、戦略、将来の業績に関する記述（将来予想に関する記述）が含まれている場合があります。これらの記述は、現在入手可能な情報に基づいて当社経営陣が判断したものであり、既知または未知のリスクや不確実性を含んでいます。</p>
+                    <p>実際の業績は、経済情勢、市場の需要、競争状況、為替レートの変動、技術革新、規制の変更など様々な重要な要因により、これらの将来予想に関する記述とは大きく異なる結果となる可能性があります。したがって、これらの情報に全面的に依拠することはお控えください。</p>
+                    <p>当ウェブサイトの情報は、投資勧誘を目的としたものではありません。投資に関する決定は、ご自身の判断において行われるようお願いいたします。当社は、新たな情報や将来の事象により、当ウェブサイトに掲載された将来予想に関する記述を更新または修正する義務を負うものではありません。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <h3 class="footer-logo-text">XYZ精密圧延株式会社</h3>
-                    <p>革新的な圧延技術で、未来の産業を支えます。</p>
-                    <p>〒100-0005 東京都千代田区丸の内X-X-X</p>
+                <div class="footer-about anim-fade-up" data-anim-anchor=".site-footer">
+                    <h3 class="footer-logo-text">XYZ Precision Rolling</h3>
+                    <p>革新的な圧延技術で、未来の産業を支えます。高品質なステンレス鋼製品を通じて、社会の発展に貢献します。</p>
+                    <p>〒100-0005 東京都千代田区丸の内X-X-X ABCビル12F</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-links anim-fade-up" data-anim-delay="0.1" data-anim-anchor=".site-footer">
                     <h4>クイックリンク</h4>
                     <ul>
-                        <li><a href="index.html">トップ</a></li>
-                        <li><a href="products.html">製品情報</a></li>
-                        <li><a href="manufacturing.html">製造プロセス</a></li>
-                        <li><a href="about.html">企業情報</a></li>
-                        <li><a href="investors.html">投資家向け情報</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="index.html" data-cursor-text="トップへ">トップ</a></li>
+                        <li><a href="products.html" data-cursor-text="製品情報">製品情報</a></li>
+                        <li><a href="manufacturing.html" data-cursor-text="製造プロセス">製造プロセス</a></li>
+                        <li><a href="about.html" data-cursor-text="企業情報">企業情報</a></li>
+                        <li><a href="investors.html" data-cursor-text="投資家情報">投資家向け情報</a></li>
+                        <li><a href="contact.html" data-cursor-text="お問い合わせ">お問い合わせ</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
+                <div class="footer-contact anim-fade-up" data-anim-delay="0.2" data-anim-anchor=".site-footer">
                     <h4>お問い合わせ</h4>
-                    <p><a href="tel:03-1234-5678">TEL: 03-1234-5678</a></p>
-                    <p><a href="mailto:info@xyz-precision.co.jp">info@xyz-precision.co.jp</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:03-1234-5678" data-cursor-text="電話する">03-1234-5678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@xyz-precision.co.jp" data-cursor-text="メールする">info@xyz-precision.co.jp</a></p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook" data-cursor-text="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -137,176 +256,16 @@
         </div>
     </footer>
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script> {/* スムーススクロール用 */}
+    <!-- GSAP & ScrollTrigger & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+    {/* <script src="path/to/your/SplitText.min.js"></script> */}
 
-
-    <!-- Swiper.js JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- AOS JS (もし使うなら) -->
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-    
-    <!-- Chart.js (投資家情報ページで読み込む) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <!-- Chart.js (このページでのみ読み込む) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Your Script -->
-  
-</body>
-</html>
-
-<body>
-<header>
-    <div class="container">
-        <a href="index.html" class="logo-link">
-            <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
-            <h1>XYZ精密圧延株式会社</h1>
-        </a>
-        <nav>
-            <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            <ul id="nav-menu">
-                <li><a href="index.html" class="active">トップ</a></li>
-                <li><a href="products.html">製品情報</a></li>
-                <li><a href="manufacturing.html">製造プロセス</a></li>
-                <li><a href="about.html">企業情報</a></li>
-                <li><a href="investors.html">投資家向け情報</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <section class="page-title-bar">
-            <div class="container" data-aos="fade-in">
-                <h1>投資家向け情報</h1>
-                <p>持続的成長と企業価値向上への取り組み</p>
-            </div>
-        </section>
-
-        <section id="ir-message" class="container page-section">
-            <h2 data-aos="fade-up">投資家の皆様へ</h2>
-            <p class="lead-text" data-aos="fade-up" data-aos-delay="100">平素は格別のご支援を賜り、厚く御礼申し上げます。当社は、精密圧延技術を核とした事業展開により、安定的な成長と企業価値の向上を目指しております。今後とも、透明性の高い情報開示に努め、株主・投資家の皆様との建設的な対話を重視してまいります。ご理解とご支援を賜りますようお願い申し上げます。</p>
-        </section>
-
-        <section id="financial-highlights" class="container page-section bg-light">
-            <h2 data-aos="fade-up">財務ハイライト</h2>
-            <div class="financial-charts" data-aos="fade-up" data-aos-delay="100">
-                <div class="chart-container">
-                    <h3><i class="fas fa-chart-bar"></i> 売上高推移</h3>
-                    <canvas id="salesChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3><i class="fas fa-chart-line"></i> 営業利益推移</h3>
-                    <canvas id="profitChart"></canvas>
-                </div>
-            </div>
-            <div class="financial-summary" data-aos="fade-up" data-aos-delay="200">
-                <h4>主要経営指標 (2023年度)</h4>
-                <table>
-                    <tr><th>売上高</th><td>150億円</td></tr>
-                    <tr><th>営業利益</th><td>15億円</td></tr>
-                    <tr><th>経常利益</th><td>14億円</td></tr>
-                    <tr><th>当期純利益</th><td>10億円</td></tr>
-                    <tr><th>自己資本比率</th><td>60%</td></tr>
-                    <tr><th>ROE (自己資本利益率)</th><td>12.5%</td></tr>
-                </table>
-            </div>
-        </section>
-
-        <section id="ir-library" class="container page-section">
-            <h2 data-aos="fade-up">IRライブラリ</h2>
-            <p data-aos="fade-up" data-aos-delay="50">決算短信、有価証券報告書、株主通信などのIR関連資料を掲載しています。</p>
-            <ul class="document-list" data-aos="fade-up" data-aos-delay="100">
-                <li>
-                    <a href="documents/financial_results_2023q4.pdf" target="_blank" class="document-link">
-                        <i class="fas fa-file-pdf"></i> 2023年度 第4四半期 決算短信
-                    </a>
-                    <span class="document-date">(2024年4月26日)</span>
-                </li>
-                <li>
-                    <a href="documents/annual_report_2023.pdf" target="_blank" class="document-link">
-                        <i class="fas fa-file-pdf"></i> 2023年度 有価証券報告書
-                    </a>
-                    <span class="document-date">(2024年6月28日)</span>
-                </li>
-                <li>
-                    <a href="documents/presentation_material_2023.pdf" target="_blank" class="document-link">
-                        <i class="fas fa-file-powerpoint"></i> 2023年度 決算説明会資料
-                    </a>
-                    <span class="document-date">(2024年5月10日)</span>
-                </li>
-                <li>
-                    <a href="documents/shareholder_newsletter_2024h1.pdf" target="_blank" class="document-link">
-                        <i class="fas fa-file-alt"></i> 株主通信 2024年上半期号
-                    </a>
-                    <span class="document-date">(2024年7月10日)</span>
-                </li>
-                <li>
-                    <a href="documents/csr_report_2023.pdf" target="_blank" class="document-link">
-                        <i class="fas fa-leaf"></i> CSRレポート 2023
-                    </a>
-                     <span class="document-date">(2024年5月15日)</span>
-                </li>
-            </ul>
-            <p class="note" data-aos="fade-up" data-aos-delay="150">※PDFファイルをご覧いただくには、Adobe Readerが必要です。</p>
-        </section>
-
-        <section id="ir-calendar" class="container page-section bg-light" data-aos="fade-up">
-            <h2><i class="far fa-calendar-alt"></i> IRカレンダー</h2>
-            <ul>
-                <li><strong>2024年10月下旬:</strong> 2024年度 第2四半期決算発表予定</li>
-                <li><strong>2025年1月下旬:</strong> 2024年度 第3四半期決算発表予定</li>
-                <li><strong>2025年4月下旬:</strong> 2024年度 通期決算発表予定</li>
-                <li><strong>2025年6月下旬:</strong> 定時株主総会開催予定</li>
-            </ul>
-        </section>
-        
-        <section id="disclaimer" class="container page-section" data-aos="fade-up">
-            <h2><i class="fas fa-exclamation-triangle"></i> 免責事項</h2>
-            <p>当ウェブサイトに掲載されている情報には、当社の計画、見通し、戦略、将来の業績に関する記述が含まれています。これらは、現在入手可能な情報に基づいて作成されたものであり、既知または未知のリスクや不確実性を含んでいます。実際の業績は、経済情勢、市場動向、競争状況、技術革新、規制変更など様々な要因により、これらの記述とは大きく異なる結果となる可能性があります。当ウェブサイトの情報は、投資勧誘を目的としたものではありません。投資に関する決定は、ご自身の判断において行われるようお願いいたします。</p>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
-                    <h3>XYZ精密圧延株式会社</h3>
-                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
-                    <p>TEL: 03-1234-5678</p>
-                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
-                </div>
-                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
-                    <h4>サイトマップ</h4>
-                    <ul>
-                        <li><a href="index.html">トップ</a></li>
-                        <li><a href="products.html">製品情報</a></li>
-                        <li><a href="manufacturing.html">製造プロセス</a></li>
-                        <li><a href="about.html">企業情報</a></li>
-                        <li><a href="investors.html">投資家向け情報</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
-                        <li><a href="#">プライバシーポリシー</a></li>
-                        <li><a href="#">サイトポリシー</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
-                    <h4>フォローする</h4>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- AOS (Animate On Scroll) Library JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
