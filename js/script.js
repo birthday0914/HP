@@ -453,7 +453,7 @@ if (pageId === 'investors' && typeof Chart !== 'undefined') {
                         borderColor: getComputedStyle(document.documentElement).getPropertyValue('--border-color-dark').trim(),
                         borderWidth: 1,
                         padding: 10,
-                        cornerRadius: var(--border-radius),
+                        cornerRadius; var(--border-radius),
                     }
                 },
                 animation: { duration: 1000, easing: 'easeInOutQuart' }
