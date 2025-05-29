@@ -198,6 +198,12 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
     font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase;
     color: var(--off-white); padding: 10px 0;
     position: relative; display: inline-block; overflow: hidden;
+    transition: color var(--transition-duration-fast) ease; 
+    /* ホバー時の色変化トランジション */
+    text-shadow: 0 0 5px rgba(0,0,0,0.2); 
+    /* ★ オプション: 微妙なテキストシャドウ */
+}
+
 }
 .main-navigation ul li a span { display: inline-block; transition: transform 0.6s var(--transition-expo); }
 .main-navigation ul li a::before {
@@ -209,8 +215,19 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
 .main-navigation ul li a.active span { transform: translateY(-100%); }
 .main-navigation ul li a:hover::before,
 .main-navigation ul li a.active::before { transform: translateY(-100%); }
-.main-navigation ul li a.active::before { color: var(--cyan-accent); /* Active state more prominent */ }
+/* アクティブなリンクのスタイルをより明確に */
+.main-navigation ul li a.active {
+    color: var(--cyan-accent); /* ★ アクティブな文字色をアクセントカラーに */
+    /* text-shadow: 0 0 8px rgba(var(--cyan-accent-rgb), 0.5); */ /* オプション: 光彩効果 */
+}
+.main-navigation ul li a.active::before {
+    color: var(--cyan-accent); /* ホバー用テキストもアクティブカラーに */
+}
 
+/* ホバー時の文字色も明確に (spanが上に隠れた後の色) */
+.main-navigation ul li a:hover {
+    color: var(--cyan-accent); /* ★ ホバー時の最終的な文字色 */
+}
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
