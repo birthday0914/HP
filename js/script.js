@@ -247,39 +247,91 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- 5. ヒーローセクション アニメーション (index.html) ---
-    function initHomePageAnimations() {
-        if (pageId === 'home' && document.querySelector('.hero-section')) {
-            const heroTitle = document.querySelector('.hero-title');
-            const heroSubtitle = document.querySelector('.hero-subtitle');
-            const heroButtons = document.querySelectorAll('.hero-cta-buttons .btn');
-            const scrollIndicator = document.querySelector('.scroll-down-indicator');
+// js/script.js
 
-            const homeHeroTl = gsap.timeline({ delay: 0.3 }); // ローディングアニメーションとの兼ね合い
+// ... (他の関数の前、または適切な位置に記述) ...
 
-            } if (heroTitle) { // SplitTextがない場合のフォールバック
-                homeHeroTl.from(heroTitle, { opacity: 0, y: 50, duration: 1, ease: "power3.out" });
-            }
-        if (heroSubtitle) { // SplitText がない場合のフォールバック
-            homeHeroTl.from(heroSubtitle, { opacity: 0, y: 30, duration: 0.8, ease: "power2.out" }, "-=0.7"); // 少し調整
+// --- 5. ヒーローセクション アニメーション (index.html) ---
+function initHomePageAnimations() {
+    // この関数は、pageId === 'home' かつローディング完了後に呼び出される想定
+
+    const heroSection = document.querySelector('.hero-section');
+    if (!heroSection) {
+        // console.log("Hero section not found on this page.");
+        return; // ヒーローセクションがなければ何もしない
+    }
+
+    const heroTitle = heroSection.querySelector('.hero-title');
+    const heroSubtitle = heroSection.querySelector('.hero-subtitle');
+    const heroButtons = heroSection.querySelectorAll('.hero-cta-buttons .btn'); // NodeList
+    const scrollIndicator = heroSection.querySelector('.scroll-down-indicator');
+
+    // GSAPタイムラインを作成 (ローディングアニメーションとの兼ね合いで遅延を設定)
+    const homeHeroTl = gsap.timeline({
+        delay: 0.3, // ローディング画面が消えた後、少し間を置いて開始
+        defaults: { // タイムライン内のアニメーションのデフォルト設定
+            duration: 0.8, // デフォルトのアニメーション時間
+            ease: "power3.out" // デフォルトのイージング
         }
-        // ... (ボタンなどのアニメーションはそのまま)
-           
+    });
 
-            if (heroButtons.length > 0) {
-                homeHeroTl.from(heroButtons, {
-                    opacity: 0, y: 30, scale: 0.8,
-                    duration: 0.7, ease: "back.out(1.7)", stagger: 0.15
-                }, "-=0.4");
-            }
-            if (scrollIndicator) {
-                homeHeroTl.fromTo(scrollIndicator, {opacity:0, y:20}, {opacity:1, y:0, duration:0.5, ease:'power1.out'}, "-=0.2");
-            }
-        }
+    // 1. タイトルのアニメーション
+    if (heroTitle) {
+        // SplitTextが利用できないため、要素全体をアニメーション
+        homeHeroTl.from(heroTitle, {
+            opacity: 0,
+            y: 60, // 少し下からスライドアップ
+            rotationX: -20, // 少し手前に傾いた状態から
+            transformOrigin: "center bottom", // 回転の中心
+            duration: 1.2, // タイトルは少し長めに
+            ease: "expo.out" // よりダイナミックなイージング
+        });
+    }
 
-    // ローディング完了後に呼び出されるように変更済み
+    // 2. サブタイトルのアニメーション
+    if (heroSubtitle) {
+        // SplitTextが利用できないため、要素全体をアニメーション
+        homeHeroTl.from(heroSubtitle, {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            ease: "power2.out"
+        }, "-=0.8"); // 前のアニメーションの途中から開始 (0.8秒早く)
+    }
 
+    // 3. CTAボタンのアニメーション
+    if (heroButtons && heroButtons.length > 0) {
+        homeHeroTl.from(heroButtons, {
+            opacity: 0,
+            y: 30,
+            scale: 0.85, // 少し小さい状態から拡大
+            duration: 0.9,
+            ease: "back.out(1.4)", // 少し跳ねるようなイージング
+            stagger: 0.15 // 各ボタンが0.15秒ずつ遅れてアニメーション開始
+        }, "-=0.6"); // 前のアニメーションの途中から開始
+    }
 
+    // 4. スクロールダウンインジケーターのアニメーション
+    if (scrollIndicator) {
+        homeHeroTl.fromTo(scrollIndicator,
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.7, ease: 'power1.out' }
+        , "-=0.3"); // 前のアニメーションの途中から開始
+    }
+
+    // (オプション) ヒーロー動画の再生コントロールや、背景要素のアニメーションなどもここに追加可能
+    // const heroVideo = document.getElementById('heroVideo');
+    // if (heroVideo) {
+    //     // 例えば、少し遅れて動画の再生を開始するなどの演出
+    //     // homeHeroTl.call(() => { heroVideo.play(); }, [], "+=0.5");
+    // }
+}
+
+// この関数をローディング完了後に呼び出す必要があります。
+// 前回のローディング処理の onComplete コールバック内で以下のように呼び出します。
+// if (pageId === 'home' && typeof initHomePageAnimations === 'function') {
+//     initHomePageAnimations();
+// }
     // --- 6. パララックス効果 & スクロールベースのアニメーション ---
     gsap.utils.toArray(".parallax-bg-image").forEach(bg => {
         const speed = parseFloat(bg.dataset.speed) || 0.3; // data-speedがなければ0.3
