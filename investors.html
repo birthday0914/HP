@@ -92,39 +92,26 @@
             </div>
         </section>
 
-        <section id="financial-highlights" class="financial-charts-section page-section bg-light-section">
-            <div class="container">
-                <div class="section-header text-center anim-fade-up">
-                    <span class="section-tagline">Performance</span>
-                    <h2 class="section-title">主要財務ハイライト</h2>
-                </div>
-                <div class="charts-grid anim-fade-up" data-anim-delay="0.2">
-                    <div class="chart-container">
-                        <h3><i class="fas fa-chart-bar"></i> 売上高推移 (億円)</h3>
-                        <canvas id="salesChart"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <h3><i class="fas fa-chart-line"></i> 営業利益推移 (億円)</h3>
-                        <canvas id="profitChart"></canvas>
-                    </div>
-                </div>
-                <div class="financial-summary-table anim-fade-up" data-anim-delay="0.3" style="margin-top: 50px;">
-                    <h3 class="text-center" style="margin-bottom: 20px;">主要経営指標 (2023年度実績)</h3>
-                    <table class="profile-table"> {/* aboutページの会社概要テーブルと類似スタイル想定 */}
-                        <tbody>
-                            <tr><th>売上高</th><td>150億円</td></tr>
-                            <tr><th>営業利益</th><td>15億円</td></tr>
-                            <tr><th>経常利益</th><td>14億円</td></tr>
-                            <tr><th>当期純利益</th><td>10億円</td></tr>
-                            <tr><th>総資産</th><td>200億円</td></tr>
-                            <tr><th>自己資本比率</th><td>60.0%</td></tr>
-                            <tr><th>ROE (自己資本利益率)</th><td>12.5%</td></tr>
-                            <tr><th>一株当たり当期純利益 (EPS)</th><td>250円</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+<!-- investors.html -->
+<section id="financial-highlights" class="financial-charts-section page-section bg-light-section">
+    <div class="container">
+        <div class="section-header text-center anim-fade-up">
+            <span class="section-tagline">Performance</span>
+            <h2 class="section-title">主要財務ハイライト</h2>
+        </div>
+        <div class="charts-grid anim-fade-up" data-anim-delay="0.2">
+            <div class="chart-container"> {/* ← CSSで高さを設定 */}
+                <h3><i class="fas fa-chart-bar"></i> 売上高推移 (億円)</h3>
+                <canvas id="salesChart"></canvas>
             </div>
-        </section>
+            <div class="chart-container"> {/* ← CSSで高さを設定 */}
+                <h3><i class="fas fa-chart-line"></i> 営業利益推移 (億円)</h3>
+                <canvas id="profitChart"></canvas>
+            </div>
+        </div>
+        {/* ... (財務サマリーテーブル) ... */}
+    </div>
+</section>
 
         <section id="ir-library" class="ir-library-section page-section">
             <div class="container">
