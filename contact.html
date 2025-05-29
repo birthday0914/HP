@@ -3,153 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XYZ精密圧延株式会社 - 革新を圧延する</title> {/* 各ページで適切に変更 */}
+    <title>お問い合わせ - XYZ精密圧延株式会社</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Swiper.js CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- AOS CSS (もし使うなら) -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Your Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="contact"> {/* ★★★ このように body タグに data-page 属性を追加 ★★★ */}
-    <div class="loading-overlay"> {/* ローディング画面 */}
-        <div class="loader"></div>
+<body data-page="contact"> {/* ページ識別用データ属性 */}
+    <div class="loading-overlay">
+        <div class="loader-logo">XYZ</div>
     </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
     <header class="site-header">
         <div class="container header-container">
-            <a href="index.html" class="logo-link">
+            <a href="index.html" class="logo-link" data-cursor-text="ホームへ">
                 <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img">
-                <span class="logo-text">XYZ精密圧延</span> {/* ロゴテキスト追加 */}
+                <span class="logo-text">XYZ Precision</span>
             </a>
             <nav class="main-navigation" id="main-nav">
                 <ul>
-                    <li><a href="index.html" data-text="トップ"><span>トップ</span></a></li>
-                    <li><a href="products.html" data-text="製品情報"><span>製品情報</span></a></li>
-                    <li><a href="manufacturing.html" data-text="製造プロセス"><span>製造プロセス</span></a></li>
-                    <li><a href="about.html" data-text="企業情報"><span>企業情報</span></a></li>
-                    <li><a href="investors.html" data-text="投資家情報"><span>投資家情報</span></a></li>
-                    <li><a href="contact.html" data-text="お問い合わせ"><span>お問い合わせ</span></a></li>
+                    <li><a href="index.html" class="nav-link" data-text="Top"><span>トップ</span></a></li>
+                    <li><a href="products.html" class="nav-link" data-text="Products"><span>製品情報</span></a></li>
+                    <li><a href="manufacturing.html" class="nav-link" data-text="Process"><span>製造プロセス</span></a></li>
+                    <li><a href="about.html" class="nav-link" data-text="About Us"><span>企業情報</span></a></li>
+                    <li><a href="investors.html" class="nav-link" data-text="Investors"><span>投資家情報</span></a></li>
+                    <li><a href="contact.html" class="nav-link active" data-text="Contact"><span>お問い合わせ</span></a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" data-cursor-stick>
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
             </button>
         </div>
     </header>
 
     <nav class="mobile-navigation" id="mobile-nav-menu">
+        <div class="mobile-nav-header">
+             <a href="index.html" class="logo-link-mobile">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img-mobile">
+                <span class="logo-text-mobile">XYZ Precision</span>
+            </a>
+        </div>
         <ul>
-            <li><a href="index.html">トップ</a></li>
-            <li><a href="products.html">製品情報</a></li>
-            <li><a href="manufacturing.html">製造プロセス</a></li>
-            <li><a href="about.html">企業情報</a></li>
-            <li><a href="investors.html">投資家向け情報</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="index.html" class="mobile-nav-link">トップ</a></li>
+            <li><a href="products.html" class="mobile-nav-link">製品情報</a></li>
+            <li><a href="manufacturing.html" class="mobile-nav-link">製造プロセス</a></li>
+            <li><a href="about.html" class="mobile-nav-link">企業情報</a></li>
+            <li><a href="investors.html" class="mobile-nav-link">投資家向け情報</a></li>
+            <li><a href="contact.html" class="mobile-nav-link active">お問い合わせ</a></li>
         </ul>
         <div class="mobile-nav-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook" data-cursor-text="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </nav>
 
-    <div class="cursor"></div> {/* カスタムカーソル */}
-    <div class="cursor-follower"></div>
-
-    <!-- ここから各ページの<main>コンテンツ -->
-<main>
-    <section class="hero-section">
-        <div class="hero-video-container">
-            <video autoplay loop muted playsinline class="hero-video" poster="img/hero-background-fallback.jpg">
-                <source src="videos/hero-video.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>精密圧延の<br><span class="highlight-text">未来</span>を創造する。</h1>
-                <p>XYZ精密圧延は、最先端技術と熟練の技で、不可能を可能にするステンレス鋼ソリューションを提供します。</p>
-                <a href="products.html" class="btn btn-primary">当社の製品を見る <i class="fas fa-arrow-right"></i></a>
-                <a href="contact.html" class="btn btn-outline">お問い合わせ</a>
+    <main class="main-content">
+        <section class="page-title-section text-center dark-overlay-section" style="background-image: url('img/contact-header-bg.jpg');"> {/* ヘッダー用背景画像 */}
+            <div class="container">
+                <span class="section-tagline light anim-fade-up">Get In Touch</span>
+                <h1 class="anim-fade-up" data-anim-delay="0.1">お問い合わせ</h1>
+                <p class="lead-text light anim-fade-up" data-anim-delay="0.2">ご質問、ご相談、お見積もりのご依頼など、お気軽にご連絡ください。</p>
             </div>
-        </div>
-        {/* <div class="scroll-down-indicator"><a href="#first-section"><span></span><span></span><span></span>Scroll</a></div> */}
-    </section>
+        </section>
 
-    <section class="parallax-section intro-section" id="first-section">
-        <div class="parallax-bg-image" style="background-image: url('img/parallax-image-01.jpg');"></div>
-        <div class="container parallax-content text-center">
-            <h2 class="section-title">テクノロジーと情熱の融合</h2>
-            <p class="lead-text">私たちは、μm単位の精度を追求し、お客様の期待を超える品質をお届けします。長年培ってきた経験と、革新への飽くなき探求心が、私たちの強みです。</p>
-            <a href="about.html" class="btn btn-secondary">企業情報へ</a>
-        </div>
-    </section>
-
-    <section class="featured-products-section page-section">
-        <div class="container text-center">
-            <h2 class="section-title">注目の製品</h2>
-            <p class="lead-text">当社の代表的な製品ラインナップの一部をご紹介します。</p>
-            {/* ここに数点の製品カードを配置 (スライダーではなく静的なもの) */}
-            <div class="product-grid-static">
-                {/* .hover-effect-card を使用した製品カード例 */}
+        <section id="contact-form-section" class="contact-page-section page-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <h2 class="section-title">お問い合わせフォーム</h2>
+                </div>
+                <p class="text-center lead-text anim-fade-up" data-anim-delay="0.1">
+                    下記のフォームに必要事項をご入力の上、「送信する」ボタンを押してください。<br>
+                    担当者より折り返しご連絡させていただきます。（<span class="required-asterisk">*</span>は必須項目です）
+                </p>
+                <form id="contact-form" action="#" method="POST" class="contact-form anim-fade-up" data-anim-delay="0.2">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">お名前 <span class="required-asterisk">*</span></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" name="company">
+                            <label for="company">会社名</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">メールアドレス <span class="required-asterisk">*</span></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">電話番号</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">件名 <span class="required-asterisk">*</span></label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <label for="message">お問い合わせ内容 <span class="required-asterisk">*</span></label>
+                    </div>
+                    <div class="form-group privacy-consent">
+                        <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                        <label for="privacy-policy" class="checkbox-label">
+                            <a href="privacy-policy.html" target="_blank" data-cursor-text="プライバシーポリシー">プライバシーポリシー</a>に同意します <span class="required-asterisk">*</span>
+                        </label>
+                    </div>
+                    <div class="form-submit-area text-center">
+                        <button type="submit" class="btn btn-primary magnetic-button" data-cursor-text="送信する">
+                            <span>送信する</span> <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <a href="products.html" class="btn btn-primary-outline" style="margin-top: 40px;">全ての製品を見る</a>
-        </div>
-    </section>
-    
-    <section class="parallax-section cta-section">
-        <div class="parallax-bg-image" style="background-image: url('img/parallax-image-02.jpg'); background-position: bottom center;"></div>
-         <div class="hero-overlay" style="background-color: rgba(0,82,212,0.7);"></div> {/* 青系のオーバーレイ */}
-        <div class="container parallax-content text-center">
-            <h2 class="section-title" style="color: var(--white);">お客様のビジョンを形に</h2>
-            <p class="lead-text" style="color: var(--off-white); opacity: 0.9;">特殊な仕様、小ロット、短納期など、あらゆるご要望にお応えします。<br>まずはお気軽にご相談ください。</p>
-            <a href="contact.html" class="btn btn-secondary">今すぐ相談する <i class="fas fa-comments"></i></a>
-        </div>
-    </section>
-</main>
-    <!-- ここまで各ページの<main>コンテンツ -->
+        </section>
+
+        <section id="direct-contact-info" class="direct-contact-section page-section bg-light-section">
+             <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Other Ways to Connect</span>
+                    <h2 class="section-title">お電話・アクセス</h2>
+                </div>
+                <div class="direct-contact-grid">
+                    <div class="contact-info-item anim-fade-up" data-anim-delay="0.1">
+                        <i class="fas fa-phone-volume"></i>
+                        <h3>お電話でのお問い合わせ</h3>
+                        <p><strong>本社 代表:</strong> <a href="tel:03-1234-5678" data-cursor-text="電話する 03-1234-5678">03-1234-5678</a></p>
+                        <p><strong>営業部 直通:</strong> <a href="tel:03-1234-5679" data-cursor-text="電話する 03-1234-5679">03-1234-5679</a></p>
+                        <p class="working-hours">(受付時間: 平日 9:00 - 17:30)</p>
+                    </div>
+                    <div class="contact-info-item anim-fade-up" data-anim-delay="0.2">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>本社所在地</h3>
+                        <p>〒100-0005 東京都千代田区丸の内X-X-X ABCビル12F</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=東京駅" target="_blank" class="btn btn-sm btn-outline" data-cursor-text="地図を開く" style="margin-top:15px; border-color: var(--text-dark-on-light); color:var(--text-dark-on-light);"><span>Google Mapsで見る</span></a>
+                    </div>
+                     <div class="contact-info-item anim-fade-up" data-anim-delay="0.3">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>メールでのお問い合わせ</h3>
+                        <p><strong>一般:</strong> <a href="mailto:info@xyz-precision.co.jp" data-cursor-text="メールを送る">info@xyz-precision.co.jp</a></p>
+                        <p><strong>採用:</strong> <a href="mailto:recruit@xyz-precision.co.jp" data-cursor-text="採用担当へメール">recruit@xyz-precision.co.jp</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            {/* Google Maps 埋め込み (実際の埋め込みコードに置き換えてください) */}
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.828039419901!2d139.76454981525902!3d35.68123628019408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1678886400000!5m2!1sja!2sjp"
+                width="100%"
+                height="450"
+                style="border:0; display:block;" /* display:blockで下の余白除去 */
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="XYZ精密圧延株式会社 本社所在地地図">
+            </iframe>
+        </section>
+
+    </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <h3 class="footer-logo-text">XYZ精密圧延株式会社</h3>
-                    <p>革新的な圧延技術で、未来の産業を支えます。</p>
-                    <p>〒100-0005 東京都千代田区丸の内X-X-X</p>
+                <div class="footer-about anim-fade-up" data-anim-anchor=".site-footer">
+                    <h3 class="footer-logo-text">XYZ Precision Rolling</h3>
+                    <p>革新的な圧延技術で、未来の産業を支えます。高品質なステンレス鋼製品を通じて、社会の発展に貢献します。</p>
+                    <p>〒100-0005 東京都千代田区丸の内X-X-X ABCビル12F</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-links anim-fade-up" data-anim-delay="0.1" data-anim-anchor=".site-footer">
                     <h4>クイックリンク</h4>
                     <ul>
-                        <li><a href="index.html">トップ</a></li>
-                        <li><a href="products.html">製品情報</a></li>
-                        <li><a href="manufacturing.html">製造プロセス</a></li>
-                        <li><a href="about.html">企業情報</a></li>
-                        <li><a href="investors.html">投資家向け情報</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="index.html" data-cursor-text="トップへ">トップ</a></li>
+                        <li><a href="products.html" data-cursor-text="製品情報">製品情報</a></li>
+                        <li><a href="manufacturing.html" data-cursor-text="製造プロセス">製造プロセス</a></li>
+                        <li><a href="about.html" data-cursor-text="企業情報">企業情報</a></li>
+                        <li><a href="investors.html" data-cursor-text="投資家情報">投資家向け情報</a></li>
+                        <li><a href="contact.html" data-cursor-text="お問い合わせ">お問い合わせ</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
+                <div class="footer-contact anim-fade-up" data-anim-delay="0.2" data-anim-anchor=".site-footer">
                     <h4>お問い合わせ</h4>
-                    <p><a href="tel:03-1234-5678">TEL: 03-1234-5678</a></p>
-                    <p><a href="mailto:info@xyz-precision.co.jp">info@xyz-precision.co.jp</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:03-1234-5678" data-cursor-text="電話する">03-1234-5678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@xyz-precision.co.jp" data-cursor-text="メールする">info@xyz-precision.co.jp</a></p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook" data-cursor-text="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -159,20 +212,11 @@
         </div>
     </footer>
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script> {/* スムーススクロール用 */}
-
-
-    <!-- Swiper.js JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- AOS JS (もし使うなら) -->
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-    
-    <!-- Chart.js (投資家情報ページで読み込む) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <!-- GSAP & ScrollTrigger & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+    {/* <script src="path/to/your/SplitText.min.js"></script> */}
 
     <!-- Your Script -->
     <script src="js/script.js"></script>
