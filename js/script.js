@@ -405,33 +405,135 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- 8. 投資家向け情報ページのグラフ (Chart.js) (investors.html) ---
-    if (pageId === 'investors' && typeof Chart !== 'undefined') {
-        Chart.defaults.font.family = "'Noto Sans JP', 'Open Sans', sans-serif";
-        Chart.defaults.color = getComputedStyle(body).getPropertyValue('--text-light').trim() || '#F0F4F8'; // CSS変数から取得
+// js/script.js
 
-        const salesChartCtx = document.getElementById('salesChart');
-        if (salesChartCtx) {
-            new Chart(salesChartCtx.getContext('2d'), { // getContext('2d') が必要
-                type: 'bar',
-                data: { /* ... データ ... */ },
-                options: { responsive: true, maintainAspectRatio: false, /* ... 他オプション ... */
-                    animation: { duration: 1000, easing: 'easeInOutQuart' } // アニメーション追加
-                }
-            });
-        }
-        const profitChartCtx = document.getElementById('profitChart');
-        if (profitChartCtx) {
-            new Chart(profitChartCtx.getContext('2d'), {
-                type: 'line',
-                data: { /* ... データ ... */ },
-                options: { responsive: true, maintainAspectRatio: false, /* ... 他オプション ... */
-                    animation: { duration: 1200, easing: 'easeInOutSine', delay: 200 }
-                }
-            });
-        }
+// --- 8. 投資家向け情報ページのグラフ (Chart.js) (investors.html) ---
+if (pageId === 'investors' && typeof Chart !== 'undefined') {
+    Chart.defaults.font.family = "'Noto Sans JP', 'Open Sans', sans-serif";
+    Chart.defaults.color = getComputedStyle(body).getPropertyValue('--text-light').trim() || '#F0F4F8';
+    Chart.defaults.borderColor = getComputedStyle(body).getPropertyValue('--border-color-dark').trim() || 'rgba(100, 125, 150, 0.3)'; // グリッドラインの色も設定
+
+    const salesChartCtx = document.getElementById('salesChart');
+    if (salesChartCtx) {
+        new Chart(salesChartCtx.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023'], // 年度を削除してシンプルに
+                datasets: [{
+                    label: '売上高 (億円)',
+                    data: [100, 110, 125, 130, 150], // ダミーデータ
+                    backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--cyan-accent').trim() || '#00E0FF',
+                    borderColor: getComputedStyle(document.documentElement).getPropertyValue('--cyan-darker').trim() || '#00B8D4',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // ★ これが重要！コンテナの高さに追従
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: Chart.defaults.color, // 目盛りの文字色
+                            callback: function(value) { return value + '億円' }
+                        },
+                        grid: {
+                            color: Chart.defaults.borderColor, // Y軸のグリッドライン色
+                            drawBorder: false, // 軸線は描画しない
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: Chart.defaults.color // 目盛りの文字色
+                        },
+                        grid: {
+                            display: false, // X軸のグリッドラインは非表示
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: Chart.defaults.color, // 凡例の文字色
+                            font: { size: 13 } // 少し小さく
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(10, 25, 47, 0.9)', // ツールチップ背景
+                        titleColor: getComputedStyle(document.documentElement).getPropertyValue('--cyan-accent').trim(),
+                        bodyColor: Chart.defaults.color,
+                        borderColor: getComputedStyle(document.documentElement).getPropertyValue('--border-color-dark').trim(),
+                        borderWidth: 1,
+                        padding: 10,
+                        cornerRadius: var(--border-radius),
+                    }
+                },
+                animation: { duration: 1000, easing: 'easeInOutQuart' }
+            }
+        });
     }
 
+    const profitChartCtx = document.getElementById('profitChart');
+    if (profitChartCtx) {
+        new Chart(profitChartCtx.getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: '営業利益 (億円)',
+                    data: [8, 9, 11, 12, 15], // ダミーデータ
+                    borderColor: getComputedStyle(document.documentElement).getPropertyValue('--blue-light').trim() || '#6597FF',
+                    backgroundColor: 'rgba(101, 151, 255, 0.15)', // エリアの色を少し濃く
+                    tension: 0.4, // 曲線の滑らかさを調整
+                    fill: true,
+                    pointBackgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--blue-light').trim(),
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: getComputedStyle(document.documentElement).getPropertyValue('--blue-light').trim(),
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    borderWidth: 2, // 線の太さ
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // ★ これが重要！コンテナの高さに追従
+                scales: {
+                     y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: Chart.defaults.color,
+                            callback: function(value) { return value + '億円' }
+                        },
+                        grid: {
+                            color: Chart.defaults.borderColor,
+                            drawBorder: false,
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: Chart.defaults.color
+                        },
+                        grid: {
+                            display: false,
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: Chart.defaults.color,
+                            font: { size: 13 }
+                        }
+                    },
+                     tooltip: { /* 上記と同様のスタイル */ }
+                },
+                animation: { duration: 1200, easing: 'easeInOutSine', delay: 200 }
+            }
+        });
+    }
+}
 
     // --- 9. "sankoudesign"風ホバーエフェクト (CSS主体、JSで追加効果) ---
     document.querySelectorAll('.hover-effect-card, .product-card-featured, .product-card-slide').forEach(card => {
