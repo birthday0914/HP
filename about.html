@@ -1,108 +1,259 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!DOCTYPE html>
-<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XYZ精密圧延株式会社 - 革新を圧延する</title> {/* 各ページで適切に変更 */}
+    <title>企業情報 - XYZ精密圧延株式会社</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Swiper.js CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- AOS CSS (もし使うなら) -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <!-- Swiper.js CSS (このページでは未使用だが共通部品として) -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Your Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="about">
-    <div class="loading-overlay"> {/* ローディング画面 */}
-        <div class="loader"></div>
+<body data-page="about"> {/* ページ識別用データ属性 */}
+    <div class="loading-overlay">
+        <div class="loader-logo">XYZ</div>
     </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
     <header class="site-header">
         <div class="container header-container">
-            <a href="index.html" class="logo-link">
+            <a href="index.html" class="logo-link" data-cursor-text="ホームへ">
                 <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img">
-                <span class="logo-text">XYZ精密圧延</span> {/* ロゴテキスト追加 */}
+                <span class="logo-text">XYZ Precision</span>
             </a>
             <nav class="main-navigation" id="main-nav">
                 <ul>
-                    <li><a href="index.html" data-text="トップ"><span>トップ</span></a></li>
-                    <li><a href="products.html" data-text="製品情報"><span>製品情報</span></a></li>
-                    <li><a href="manufacturing.html" data-text="製造プロセス"><span>製造プロセス</span></a></li>
-                    <li><a href="about.html" data-text="企業情報"><span>企業情報</span></a></li>
-                    <li><a href="investors.html" data-text="投資家情報"><span>投資家情報</span></a></li>
-                    <li><a href="contact.html" data-text="お問い合わせ"><span>お問い合わせ</span></a></li>
+                    <li><a href="index.html" class="nav-link" data-text="Top"><span>トップ</span></a></li>
+                    <li><a href="products.html" class="nav-link" data-text="Products"><span>製品情報</span></a></li>
+                    <li><a href="manufacturing.html" class="nav-link" data-text="Process"><span>製造プロセス</span></a></li>
+                    <li><a href="about.html" class="nav-link active" data-text="About Us"><span>企業情報</span></a></li>
+                    <li><a href="investors.html" class="nav-link" data-text="Investors"><span>投資家情報</span></a></li>
+                    <li><a href="contact.html" class="nav-link" data-text="Contact"><span>お問い合わせ</span></a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" data-cursor-stick>
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
             </button>
         </div>
     </header>
 
     <nav class="mobile-navigation" id="mobile-nav-menu">
+        <div class="mobile-nav-header">
+             <a href="index.html" class="logo-link-mobile">
+                <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo-img-mobile">
+                <span class="logo-text-mobile">XYZ Precision</span>
+            </a>
+        </div>
         <ul>
-            <li><a href="index.html">トップ</a></li>
-            <li><a href="products.html">製品情報</a></li>
-            <li><a href="manufacturing.html">製造プロセス</a></li>
-            <li><a href="about.html">企業情報</a></li>
-            <li><a href="investors.html">投資家向け情報</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="index.html" class="mobile-nav-link">トップ</a></li>
+            <li><a href="products.html" class="mobile-nav-link">製品情報</a></li>
+            <li><a href="manufacturing.html" class="mobile-nav-link">製造プロセス</a></li>
+            <li><a href="about.html" class="mobile-nav-link active">企業情報</a></li>
+            <li><a href="investors.html" class="mobile-nav-link">投資家向け情報</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">お問い合わせ</a></li>
         </ul>
         <div class="mobile-nav-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook" data-cursor-text="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </nav>
 
-    <div class="cursor"></div> {/* カスタムカーソル */}
-    <div class="cursor-follower"></div>
+    <main class="main-content">
+        <section class="page-title-section text-center dark-overlay-section" style="background-image: url('img/about-header-bg.jpg');"> {/* ヘッダー用背景画像 */}
+            <div class="container">
+                <span class="section-tagline light anim-fade-up">Who We Are</span>
+                <h1 class="anim-fade-up" data-anim-delay="0.1">企業情報</h1>
+                <p class="lead-text light anim-fade-up" data-anim-delay="0.2">信頼と革新の歴史、私たちの使命とチームをご紹介します。</p>
+            </div>
+        </section>
 
-    <!-- ここから各ページの<main>コンテンツ -->
-    <!-- <main> ... </main> -->
-    <!-- ここまで各ページの<main>コンテンツ -->
+        <section id="company-mission" class="company-mission-section page-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Our Purpose</span>
+                    <h2 class="section-title">私たちの使命と価値観</h2>
+                </div>
+                <div class="mission-content-grid">
+                    <div class="mission-image-wrapper anim-image-reveal" data-anim-delay="0.2">
+                        <img src="img/mission-vision.jpg" alt="未来を見据えるイメージ" class="mission-image">
+                    </div>
+                    <div class="mission-text-content anim-fade-up" data-anim-delay="0.3">
+                        <h3>未来を圧延する技術で、社会に貢献する。</h3>
+                        <p class="lead-text">XYZ精密圧延株式会社は、最先端の精密圧延技術を通じて、高品質なステンレス鋼製品を供給し、持続可能な社会の発展と人々の豊かな生活に貢献することを使命とします。</p>
+                        <p>私たちは、お客様のニーズを深く理解し、期待を超える価値を提供するために、常に技術革新に挑戦し続けます。環境保全とコンプライアンスを重視し、全てのステークホルダーから信頼される企業を目指します。</p>
+                        <h4>私たちの価値観 (Our Core Values)</h4>
+                        <ul class="values-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>顧客志向:</strong> お客様の成功を私たちの成功と捉えます。</li>
+                            <li><i class="fas fa-medal"></i> <strong>品質追求:</strong> 最高水準の品質を追求し、妥協しません。</li>
+                            <li><i class="fas fa-lightbulb"></i> <strong>技術革新:</strong> 常に新しい技術と可能性に挑戦し続けます。</li>
+                            <li><i class="fas fa-handshake"></i> <strong>共存共栄:</strong> 社会、環境との調和を大切にし、共に成長します。</li>
+                            <li><i class="fas fa-users-cog"></i> <strong>人材育成:</strong> 社員の成長が企業の成長と考え、働きがいを重視します。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="company-history" class="company-history-section page-section bg-light-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Our Journey</span>
+                    <h2 class="section-title">沿革</h2>
+                </div>
+                <div class="history-timeline-container anim-fade-up" data-anim-delay="0.2">
+                    <div class="history-event">
+                        <div class="history-year-badge">1970<span class="year-suffix">年</span></div>
+                        <div class="history-event-content">
+                            <h4>XYZ金属加工所 創業</h4>
+                            <p>特殊金属の精密加工事業を開始。高い技術力が評価される。</p>
+                        </div>
+                    </div>
+                    <div class="history-event">
+                        <div class="history-year-badge">1985<span class="year-suffix">年</span></div>
+                        <div class="history-event-content">
+                            <h4>XYZ精密圧延株式会社 設立</h4>
+                            <p>ステンレス鋼の精密圧延事業に本格参入。社名を変更し新たなスタートを切る。</p>
+                        </div>
+                    </div>
+                    <div class="history-event">
+                        <div class="history-year-badge">2000<span class="year-suffix">年</span></div>
+                        <div class="history-event-content">
+                            <h4>最新鋭圧延機導入</h4>
+                            <p>20段センジマーミルを導入し、極薄箔の生産能力を飛躍的に向上させる。</p>
+                        </div>
+                    </div>
+                    <div class="history-event">
+                        <div class="history-year-badge">2015<span class="year-suffix">年</span></div>
+                        <div class="history-event-content">
+                            <h4>ISO9001認証取得</h4>
+                            <p>品質マネジメントシステムの国際規格認証を取得し、グローバル基準の品質保証体制を確立。</p>
+                        </div>
+                    </div>
+                    <div class="history-event">
+                        <div class="history-year-badge">2023<span class="year-suffix">年</span></div>
+                        <div class="history-event-content">
+                            <h4>新研究開発拠点「R&Dイノベーションセンター」開設</h4>
+                            <p>次世代材料の研究開発を加速し、未来のニーズに応える技術基盤を強化。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-image-wrapper anim-image-reveal" data-anim-delay="0.4">
+                    <img src="img/company-history-collage.jpg" alt="会社の歴史的な瞬間をコラージュしたイメージ" class="history-collage-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="company-team" class="company-team-section page-section">
+            <div class="container">
+                <div class="section-header text-center anim-fade-up">
+                    <span class="section-tagline">Our Leaders</span>
+                    <h2 class="section-title">経営陣紹介</h2>
+                </div>
+                <p class="lead-text text-center anim-fade-up" data-anim-delay="0.1">経験豊富なリーダーシップチームが、XYZ精密圧延の持続的な成長と革新を牽引します。</p>
+                <div class="team-grid">
+                    <div class="team-member-card anim-fade-up" data-anim-delay="0.2" data-cursor-text="詳細">
+                        <div class="team-member-image-wrapper">
+                            <img src="img/ceo.jpg" alt="代表取締役社長 山田 太郎">
+                        </div>
+                        <div class="team-member-info">
+                            <h4>山田 太郎</h4>
+                            <p class="team-member-title">代表取締役社長</p>
+                            <p class="team-member-quote">"技術と信頼で、ステンレス鋼の新たな可能性を切り拓き、社会に貢献します。"</p>
+                        </div>
+                    </div>
+                    <div class="team-member-card anim-fade-up" data-anim-delay="0.35" data-cursor-text="詳細">
+                         <div class="team-member-image-wrapper">
+                            <img src="img/cto.jpg" alt="取締役 技術開発本部長 佐藤 花子">
+                        </div>
+                        <div class="team-member-info">
+                            <h4>佐藤 花子</h4>
+                            <p class="team-member-title">取締役 技術開発本部長</p>
+                            <p class="team-member-quote">"常に最高の品質を追求し、お客様の期待を超える革新的な製品をお届けします。"</p>
+                        </div>
+                    </div>
+                    <div class="team-member-card anim-fade-up" data-anim-delay="0.5" data-cursor-text="詳細">
+                         <div class="team-member-image-wrapper">
+                            <img src="img/sales-manager.jpg" alt="取締役 営業統括部長 鈴木 一郎">
+                        </div>
+                        <div class="team-member-info">
+                            <h4>鈴木 一郎</h4>
+                            <p class="team-member-title">取締役 営業統括部長</p>
+                            <p class="team-member-quote">"お客様との対話を第一に、最適なソリューションを提案し、共に成功を目指します。"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="company-profile-overview" class="company-profile-section page-section bg-light-section anim-fade-up">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tagline">Fact Sheet</span>
+                    <h2 class="section-title">会社概要</h2>
+                </div>
+                <div class="profile-table-wrapper">
+                    <table class="profile-table">
+                        <tbody>
+                            <tr><th>会社名</th><td>XYZ精密圧延株式会社 (XYZ Precision Rolling Co., Ltd.)</td></tr>
+                            <tr><th>設立</th><td>1985年4月1日 (創業1970年)</td></tr>
+                            <tr><th>資本金</th><td>1億円</td></tr>
+                            <tr><th>代表者</th><td>代表取締役社長 山田 太郎</td></tr>
+                            <tr><th>事業内容</th><td>ステンレス鋼および特殊金属の精密冷間圧延加工、研究開発、販売</td></tr>
+                            <tr><th>本社所在地</th><td>〒100-0005 東京都千代田区丸の内X-X-X ABCビル12F</td></tr>
+                            <tr><th>主要工場</th><td>神奈川県横浜市鶴見区 (第一工場)、千葉県市原市 (第二工場)</td></tr>
+                            <tr><th>電話番号 (代表)</th><td><a href="tel:03-1234-5678" data-cursor-text="電話する">03-1234-5678</a></td></tr>
+                            <tr><th>従業員数</th><td>165名 (2024年4月現在)</td></tr>
+                            <tr><th>認証取得</th><td>ISO 9001 (品質), ISO 14001 (環境)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <h3 class="footer-logo-text">XYZ精密圧延株式会社</h3>
-                    <p>革新的な圧延技術で、未来の産業を支えます。</p>
-                    <p>〒100-0005 東京都千代田区丸の内X-X-X</p>
+                <div class="footer-about anim-fade-up" data-anim-anchor=".site-footer">
+                    <h3 class="footer-logo-text">XYZ Precision Rolling</h3>
+                    <p>革新的な圧延技術で、未来の産業を支えます。高品質なステンレス鋼製品を通じて、社会の発展に貢献します。</p>
+                    <p>〒100-0005 東京都千代田区丸の内X-X-X ABCビル12F</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-links anim-fade-up" data-anim-delay="0.1" data-anim-anchor=".site-footer">
                     <h4>クイックリンク</h4>
                     <ul>
-                        <li><a href="index.html">トップ</a></li>
-                        <li><a href="products.html">製品情報</a></li>
-                        <li><a href="manufacturing.html">製造プロセス</a></li>
-                        <li><a href="about.html">企業情報</a></li>
-                        <li><a href="investors.html">投資家向け情報</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="index.html" data-cursor-text="トップへ">トップ</a></li>
+                        <li><a href="products.html" data-cursor-text="製品情報">製品情報</a></li>
+                        <li><a href="manufacturing.html" data-cursor-text="製造プロセス">製造プロセス</a></li>
+                        <li><a href="about.html" data-cursor-text="企業情報">企業情報</a></li>
+                        <li><a href="investors.html" data-cursor-text="投資家情報">投資家向け情報</a></li>
+                        <li><a href="contact.html" data-cursor-text="お問い合わせ">お問い合わせ</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
+                <div class="footer-contact anim-fade-up" data-anim-delay="0.2" data-anim-anchor=".site-footer">
                     <h4>お問い合わせ</h4>
-                    <p><a href="tel:03-1234-5678">TEL: 03-1234-5678</a></p>
-                    <p><a href="mailto:info@xyz-precision.co.jp">info@xyz-precision.co.jp</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:03-1234-5678" data-cursor-text="電話する">03-1234-5678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@xyz-precision.co.jp" data-cursor-text="メールする">info@xyz-precision.co.jp</a></p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook" data-cursor-text="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" data-cursor-text="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn" data-cursor-text="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -112,210 +263,14 @@
         </div>
     </footer>
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script> {/* スムーススクロール用 */}
+    <!-- GSAP & ScrollTrigger & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+    {/* <script src="path/to/your/SplitText.min.js"></script> */}
 
-
-    <!-- Swiper.js JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- AOS JS (もし使うなら) -->
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-    
-    <!-- Chart.js (投資家情報ページで読み込む) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
     <!-- Your Script -->
- 
-</body>
-</html>
-
-<body>
-    <header>
-    <div class="container">
-        <a href="index.html" class="logo-link">
-            <img src="img/logo.png" alt="XYZ精密圧延株式会社 ロゴ" class="logo">
-            <h1>XYZ精密圧延株式会社</h1>
-        </a>
-        <nav>
-            <button id="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            <ul id="nav-menu">
-                <li><a href="index.html" class="active">トップ</a></li>
-                <li><a href="products.html">製品情報</a></li>
-                <li><a href="manufacturing.html">製造プロセス</a></li>
-                <li><a href="about.html">企業情報</a></li>
-                <li><a href="investors.html">投資家向け情報</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <section class="page-title-bar">
-            <div class="container" data-aos="fade-in">
-                <h1>企業情報</h1>
-                <p>信頼と革新の歴史、私たちの使命とチーム</p>
-            </div>
-        </section>
-
-        <section id="company-mission" class="container page-section">
-            <h2 data-aos="fade-up">私たちの使命 (Our Mission)</h2>
-            <div class="mission-content">
-                <img src="img/mission-vision.jpg" alt="未来を見据えるイメージ" class="mission-image" data-aos="fade-right" data-aos-delay="200">
-                <div data-aos="fade-left" data-aos-delay="300">
-                    <p class="lead-text">XYZ精密圧延株式会社は、最先端の精密圧延技術を通じて、高品質なステンレス鋼製品を供給し、社会の発展と人々の豊かな生活に貢献することを使命とします。</p>
-                    <p>私たちは、お客様のニーズを深く理解し、期待を超える価値を提供するために、常に技術革新に挑戦し続けます。また、環境保全と持続可能な社会の実現に向けた取り組みを積極的に推進します。</p>
-                    <h3>私たちの価値観 (Our Values)</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> <strong>顧客第一:</strong> お客様の成功を最優先に考えます。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>品質追求:</strong> 最高水準の品質を追求し続けます。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>技術革新:</strong> 常に新しい技術と可能性に挑戦します。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>共存共栄:</strong> 社会、環境との調和を大切にします。</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>人材育成:</strong> 社員の成長と働きがいを重視します。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="company-history" class="container page-section bg-light">
-            <h2 data-aos="fade-up">沿革 (Our History)</h2>
-            <div class="history-timeline" data-aos="fade-up" data-aos-delay="100">
-                <div class="history-event">
-                    <span class="history-year">1970年</span>
-                    <p>XYZ金属加工所として創業。特殊金属の加工を開始。</p>
-                </div>
-                <div class="history-event">
-                    <span class="history-year">1985年</span>
-                    <p>ステンレス鋼の精密圧延事業に本格参入。XYZ精密圧延株式会社に社名変更。</p>
-                </div>
-                <div class="history-event">
-                    <span class="history-year">2000年</span>
-                    <p>最新鋭の20段センジマーミルを導入。極薄箔の生産能力を強化。</p>
-                </div>
-                <div class="history-event">
-                    <span class="history-year">2015年</span>
-                    <p>ISO9001認証取得。品質マネジメントシステムを国際基準に適合。</p>
-                </div>
-                <div class="history-event">
-                    <span class="history-year">2023年</span>
-                    <p>新研究開発棟を設立。次世代材料の開発を加速。</p>
-                </div>
-            </div>
-            <img src="img/company-history-collage.jpg" alt="会社の歴史的瞬間コラージュ" class="history-collage-image" data-aos="zoom-in" data-aos-delay="300">
-        </section>
-
-        <section id="company-team" class="container page-section">
-            <h2 data-aos="fade-up">経営陣・チーム (Our Team)</h2>
-            <p data-aos="fade-up" data-aos-delay="100">当社の成長は、情熱と専門知識を持ったチームメンバー一人ひとりの力によって支えられています。私たちは、多様なバックグラウンドを持つ人材が集い、互いに協力し、革新を生み出す企業文化を育んでいます。</p>
-            <div class="team-grid">
-                <div class="team-member-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <img src="img/ceo.jpg" alt="代表取締役社長 山田太郎">
-                    <h4>山田 太郎</h4>
-                    <p>代表取締役社長</p>
-                    <p class="member-quote">"技術と信頼で、ステンレス鋼の新たな可能性を切り拓きます。"</p>
-                </div>
-                <div class="team-member-card" data-aos="zoom-in-up" data-aos-delay="300">
-                    <img src="img/cto.jpg" alt="取締役 技術本部長 佐藤花子">
-                    <h4>佐藤 花子</h4>
-                    <p>取締役 技術本部長</p>
-                    <p class="member-quote">"常に最高の品質を追求し、お客様の期待を超える製品をお届けします。"</p>
-                </div>
-                <div class="team-member-card" data-aos="zoom-in-up" data-aos-delay="400">
-                    <img src="img/sales-manager.jpg" alt="営業部長 鈴木一郎">
-                    <h4>鈴木 一郎</h4>
-                    <p>営業部長</p>
-                    <p class="member-quote">"お客様との対話を大切にし、最適なソリューションを提案します。"</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="company-profile" class="container page-section bg-light" data-aos="fade-up">
-            <h2>会社概要</h2>
-            <table>
-                <tr>
-                    <th>会社名</th>
-                    <td>XYZ精密圧延株式会社 (XYZ Precision Rolling Co., Ltd.)</td>
-                </tr>
-                <tr>
-                    <th>設立</th>
-                    <td>1985年4月1日 (創業1970年)</td>
-                </tr>
-                <tr>
-                    <th>資本金</th>
-                    <td>1億円</td>
-                </tr>
-                <tr>
-                    <th>代表者</th>
-                    <td>代表取締役社長 山田 太郎</td>
-                </tr>
-                <tr>
-                    <th>事業内容</th>
-                    <td>ステンレス鋼および特殊金属の精密冷間圧延加工、販売</td>
-                </tr>
-                <tr>
-                    <th>本社所在地</th>
-                    <td>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</td>
-                </tr>
-                <tr>
-                    <th>工場</th>
-                    <td>〒230-0000 神奈川県横浜市鶴見区大黒町4-5-6</td>
-                </tr>
-                <tr>
-                    <th>電話番号</th>
-                    <td>03-1234-5678 (代表)</td>
-                </tr>
-                <tr>
-                    <th>従業員数</th>
-                    <td>150名 (2024年4月現在)</td>
-                </tr>
-                <tr>
-                    <th>認証</th>
-                    <td>ISO9001 (品質マネジメントシステム)</td>
-                </tr>
-            </table>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
-                    <h3>XYZ精密圧延株式会社</h3>
-                    <p>〒100-0000 東京都千代田区丸の内1-2-3 ABCビル10F</p>
-                    <p>TEL: 03-1234-5678</p>
-                    <p>高品質ステンレス鋼の精密圧延なら当社にお任せください。</p>
-                </div>
-                <div class="footer-links" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
-                    <h4>サイトマップ</h4>
-                    <ul>
-                        <li><a href="index.html">トップ</a></li>
-                        <li><a href="products.html">製品情報</a></li>
-                        <li><a href="manufacturing.html">製造プロセス</a></li>
-                        <li><a href="about.html">企業情報</a></li>
-                        <li><a href="investors.html">投資家向け情報</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
-                        <li><a href="#">プライバシーポリシー</a></li>
-                        <li><a href="#">サイトポリシー</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
-                    <h4>フォローする</h4>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <p class="copyright">© 2024 XYZ Precision Rolling Co., Ltd. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- AOS (Animate On Scroll) Library JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
