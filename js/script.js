@@ -4,7 +4,7 @@
 // GSAPプラグイン登録 (SplitTextが利用可能な場合)
 // もしSplitTextが利用できない場合は、gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); のみとする
 if (typeof SplitText !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 } else {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     console.warn("SplitText plugin is not available. Text animations will be simplified.");
@@ -257,27 +257,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const homeHeroTl = gsap.timeline({ delay: 0.3 }); // ローディングアニメーションとの兼ね合い
 
-            if (typeof SplitText !== 'undefined' && heroTitle) {
-                const splitTitle = new SplitText(heroTitle, { type: "lines,words", linesClass: "hero-line" });
-                gsap.set(splitTitle.lines, { overflow: "hidden" });
-                homeHeroTl.from(splitTitle.words, {
-                    yPercent: 110, opacity: 0, rotationZ: 10,
-                    duration: 0.8, ease: "power3.out", stagger: 0.04,
-                });
-            } else if (heroTitle) { // SplitTextがない場合のフォールバック
+            } if (heroTitle) { // SplitTextがない場合のフォールバック
                 homeHeroTl.from(heroTitle, { opacity: 0, y: 50, duration: 1, ease: "power3.out" });
             }
-
-            if (typeof SplitText !== 'undefined' && heroSubtitle) {
-                const splitSubtitle = new SplitText(heroSubtitle, { type: "chars", charsClass: "hero-char" });
-                homeHeroTl.from(splitSubtitle.chars, {
-                    opacity: 0, scale:1.5, y:10,
-                    duration: 0.025, ease: "sine.inOut",
-                    stagger: { amount: 0.6, from: "random" }
-                }, "-=0.5");
-            } else if (heroSubtitle) {
-                homeHeroTl.from(heroSubtitle, { opacity: 0, y: 30, duration: 0.8, ease: "power2.out" }, "-=0.6");
-            }
+        if (heroSubtitle) { // SplitText がない場合のフォールバック
+            homeHeroTl.from(heroSubtitle, { opacity: 0, y: 30, duration: 0.8, ease: "power2.out" }, "-=0.7"); // 少し調整
+        }
+        // ... (ボタンなどのアニメーションはそのまま)
+           
 
             if (heroButtons.length > 0) {
                 homeHeroTl.from(heroButtons, {
