@@ -675,7 +675,7 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
 
 /* === Footer === */
 .site-footer {
-    background-color: var(--footer-bg); color: var(--grey-medium); /* ★ デフォルトのフッター文字色を少し明るめに (例: #A0B0C0 -> #BCCCDC) */
+    background-color: #08121E; color: #A0B0C0; /* ★ デフォルトのフッター文字色を少し明るめに (例: #A0B0C0 -> #BCCCDC) */
     padding: 60px 0 30px;
     border-top: 4px solid var(--blue-deep); /* 少し太いライン */
     font-size: 0.95rem;
