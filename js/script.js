@@ -568,8 +568,8 @@ function initInvestorsPageAnimations() { // investorsページ専用の初期化
                         tension: 0.4, // 曲線の滑らかさ (0で直線、1に近いほどカーブ)
                         fill: true, // 線の下を塗りつぶす
                         pointBackgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--blue-light').trim(),
-                        pointBorderColor: var(--white),
-                        pointHoverBackgroundColor: var(--white),
+                        pointBorderColor: whiteColor,
+                        pointHoverBackgroundColor: whiteColor,
                         pointHoverBorderColor: getComputedStyle(document.documentElement).getPropertyValue('--blue-light').trim(),
                         pointRadius: 5,
                         pointHoverRadius: 8,
